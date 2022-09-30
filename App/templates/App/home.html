@@ -1,0 +1,353 @@
+{% load static %}
+<style>
+  .imagen-vacantes{
+    background-image: url("{% static 'App/images/vacantes2.jpg' %}");
+    width: 100%;
+    height: 70%;
+    background-color: black;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+<!DOCTYPE HTML>
+<HTML>
+  <HEAD>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P46S4Q8');</script>
+    <!-- End Google Tag Manager -->  
+    <link rel="shortcut icon" href="{% static 'App/images/crystal-sas.png' %}">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  </HEAD>
+  <BODY>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P46S4Q8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col s12">
+              <div class="slider">                
+                <a class="btn-floating next" id="next"><i id="next" class="material-icons">keyboard_arrow_right</i> </a>
+                <a class="btn-floating prev" id="prev"><i id="prev" class="material-icons">keyboard_arrow_left</i></a> 
+                <ul class="slides" style="position: sticky;"> 
+                  <!--
+                  {% for i in img %}
+                    <li>
+                      <img class="opacidad" src="{{i.imageURL}}">
+                      {{i.nombre}}
+                      {% with nombre="Banner_principal" %}
+                        <div class="caption">
+                          <br><br>
+                          <h2 class="titulo-imagen-vacantes">{{i.nombre}}</h2>
+                          <h5 class="texto-somos-honestos">{{i.descripcion}}</h5>
+                        </div>
+                      {% endwith %}
+                      <div class="caption-imagenes">
+                        <h2 class="texto-imagen-vacantes">{{i.titulo}}</h2>
+                      </div>
+                    </li>
+                  {% endfor %}  
+                  -->    
+                  <li>
+                    <img class="opacidad" src="{% static 'App/images/banner-inicio-crystal.jpg' %}">
+                  </li>          
+                  <li class="fondoF">
+                    <img class="opacidad" src="{% static 'App/images/1BANNERS_TRABAJOCRYSTAL_GEF.png' %}">
+                  </li>
+                  <li class="fondoF">
+                    <img class="opacidad" src="{% static 'App/images/2BANNERS_TRABAJOCRYSTAL_PB.png' %}">
+                  </li>  
+                  <li class="fondoF">
+                    <img class="opacidad" src="{% static 'App/images/3BANNERS_TRABAJOCRYSTAL_PBA.png' %}">
+                  </li>   
+                  <li class="fondoF">
+                    <img class="opacidad" src="{% static 'App/images/4BANNERS_TRABAJOCRYSTAL_BF.png' %}">
+                  </li>    
+                  <li class="fondoF">
+                    <img class="opacidad" src="{% static 'App/images/5BANNERS_TRABAJOCRYSTAL_GX.png' %}">
+                  </li>  
+                  <li class="fondoF">
+                    <img class="opacidad" src="{% static 'App/images/6BANNERS_TRABAJOCRYSTAL_PARFOIS.png' %}">
+                  </li>    
+                </ul>                
+              </div>              
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid unete-a-nuestro-equipo">   
+          <div class="row">
+            <div class="col s12">
+              <h4 style="text-align: center;">Únete a nuestro equipo de trabajo</h4>
+              <h5 style="text-align: center;margin-block-end: 3%;padding: 1%;">"Somos honestos, pensamos con optimismo, ejecutamos con inteligencia, somos constantes 
+                en nuestras metas y actuamos con sentido social".</h5>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid general-a-quien-buscamos">
+          <div class="row">
+            <div class="col l7 m7 s12">
+              <div class="container-fluid contenido-a-quien-buscamos">
+                <div class="row">
+                  <div class="col l12 m12 s12" style="padding: 6%;">
+                    <h4 style="margin: 0%;">¿A quién buscamos?</h4>
+                    <br>
+                    <p style="font-size: large;font-family: Neue helvetica® pro 45, sans-serif;font-weight: 300;text-align: justify;">
+                      Buscamos personas apasionadas por lo que hacen, dispuestas a aprender cada día, 
+                      a encontrar cada vez nuevas y mejores formas de hacer la cosas; perseverantes, creativas, 
+                      que actúen con conciencia social y encuentren valor en ayudar a los demás a expresar su esencia 
+                      a través del vestuario.</p>
+                  </div>                    
+                </div>
+              </div>                
+            </div>       
+            <div class="col l5 m5 s12">
+              <div class="container-fluid foto-quien-buscamos">
+                <div class="row">
+                  <div class="col l12 m12 s12">
+                    <div>
+                      <img class="tamaño-imagen" src="{% static 'App/images/A--quien-buscamos.jpg' %}">
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>                     
+          </div>   
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col s12 center">            
+              <h4>¿Por qué trabajar en Crystal?</h4>
+              <p style="font-size: large;font-family: Neue helvetica® pro 45, sans-serif;font-weight: 300;text-align: justify;padding: 2%;">
+                En nuestra Compañía tenemos la convicción de que a través de nuestras acciones tejemos 
+                sentido social con nuestros colaboradores, sus familias y el mundo que nos rodea, por eso 
+                priorizamos el bienestar de nuestro talento humano y nos mueve el propósito de impactar 
+                positivamente a la sociedad a la que pertenecemos.</p>
+            </div>
+            <div class="col s12">
+              <div class="container">
+                <div class="row">
+                  <div class="col l3 m3 s6">
+                    <div class="card hoverable">
+                      <a href="#img1" id="imagen1">
+                        <div class="card-image">
+                          <img class="imagen-card" src="{% static 'App/images/bienestar_2.jpg' %}" >
+                        </div>
+                        <div class="card-content contenido">
+                          BIENESTAR<BR>
+                          158 C
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col l3 m3 s6">
+                    <div class="card hoverable">
+                      <a href="#img2" id="imagen2">
+                        <div class="card-image">
+                          <img src="{% static 'App/images/formacion.jpg' %}">
+                        </div>
+                        <div class="card-content contenido">
+                          FORMACIÓN<BR>
+                          368 C
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col l3 m3 s6">
+                    <div class="card hoverable">
+                      <a href="#img3" id="imagen3">
+                        <div class="card-image">
+                          <img src="{% static 'App/images/comunidad_1.jpg' %}">
+                        </div>
+                        <div class="card-content contenido">
+                          COMUNIDAD<BR>
+                          123 C
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col l3 m3 s6">
+                    <div class="card hoverable">
+                      <a href="#img4" id="imagen4">
+                        <div class="card-image">
+                          <img src="{% static 'App/images/impacto-positivo.jpg' %}">
+                        </div>
+                        <div class="card-content contenido">
+                          IMPACTO SOCIAL<BR>
+                          3252 C
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="modal modal-image" id="img1">
+                    <a href="" class="cerrar" id="cerrar1">Cerrar</a>
+                    <div class="imagen">
+                      <a><img src="{% static 'App/images/bienestar.jpg' %}"></a>
+                    </div>
+                  </div>    
+                  <div class="modal modal-image" id="img2">
+                    <a href="" class="cerrar" id="cerrar2">Cerrar</a>
+                    <div class="imagen">
+                      <a><img src="{% static 'App/images/formacion_1.jpg' %}"></a>
+                    </div>
+                  </div> 
+                  <div class="modal modal-image" id="img3">
+                    <a href="" class="cerrar" id="cerrar3">Cerrar</a>
+                    <div class="imagen">
+                      <a><img src="{% static 'App/images/comunidad.jpg' %}"></a>
+                    </div>
+                  </div> 
+                  <div class="modal modal-image" id="img4">
+                    <a href="" class="cerrar" id="cerrar4">Cerrar</a>
+                    <div class="imagen">
+                      <a><img src="{% static 'App/images/impacto__social_1.jpg' %}"></a>
+                    </div>
+                  </div>          
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col s12">
+              <div class="imagen-vacantes" >
+              </div>
+            </div>                    
+          </div> 
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col s12 center">
+              <h4 class="titulo-imagen-te-estamos">¡Te estamos esperando para iniciar nuevos proyectos juntos!</h4>
+              <br>
+              <a href="{% url 'vacantes' filtro=1 %}" class="waves-effect waves-light btn-large" id="vacantes">Vacantes</a>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col s12 center">
+              <div class="row">
+                <h5>Síguenos en nuestras redes sociales</h5>
+                <h6>SeleccionCrystal</h6>
+              </div>
+              <div class="container" style="width: 36%;">
+                <div class="row">
+                  <div class="col l3 m12 s12">
+                    <a href="https://www.instagram.com/seleccioncrystal/" target="_blank"><img src="{% static 'App/images/icono-instagram.png' %}"></a>
+                  </div>
+                  <div class="col l3 m12 s12" style="margin-top: 3%;">
+                    <a style="font-size: large;color: black;" href="https://www.instagram.com/seleccioncrystal/" target="_blank">Instagram</a>
+                  </div>
+                  <div class="col l3 m12 s12"> 
+                    <a href="https://www.facebook.com/Selecci%C3%B3n-Crystal-1054647044618912" target="_blank"><img src="{% static 'App/images/icono-facebook.png' %}"></a>
+                  </div>
+                  <div class="col l3 m12 s12" style="margin-top: 3%;">
+                    <a style="font-size: large;color: black;" href="https://www.facebook.com/Selecci%C3%B3n-Crystal-1054647044618912" target="_blank">Facebook</a>
+                  </div>
+                </div>
+              </div>
+            </div>                
+          </div> 
+        </div>       
+      </div>
+    </div>
+    <footer class="pagina-footer">
+      <div class="container" >
+        <div class="row">
+          <div class="col l7 m6 s12">
+            <br>
+            <div class="contactanos">Contáctanos</div>
+            <br>
+            <div class="contactanos-correos">
+              Si tienes alguna duda puedes comunicarte con nosotros:
+              <br>
+              <br>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col l12 s12">
+                    - Para procesos administrativos:
+                    <br>
+                    <i class="fa fa-envelope iconos"></i> seleccioncrystal@crystal.com.co
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col l12 s12">
+                    - Para realizar la práctica con nosotros:
+                    <br>
+                    <i class="fa fa-envelope iconos"></i> selpracticantes@crystal.com.co
+                    <br>
+                    <i class="fa fa-whatsapp iconos"></i> +54 3104153092  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="col l5 m6 s12">
+            <div class="container-fluid"> 
+              <div class="contactanos-correos">
+                También puedes seguirnos en nuestras redes sociales para estar enterado de nuestras últimas vacantes.              
+                <br><br>
+                <i class="fa fa-instagram iconos"></i> <a class="redes" href="https://www.instagram.com/seleccioncrystal/" target="_blank">@seleccioncrystal  </a>               
+                <br>        
+                <i class="fa fa-facebook iconos"></i> <a class="redes" href="https://www.facebook.com/Selecci%C3%B3n-Crystal-1054647044618912" target="_blank">@selección Crystal</a>
+                <br>
+                <br>
+              </div>            
+            </div>            
+          </div>
+        </div>
+      </div>
+    </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'App/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'App/css/home.css' %}">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static 'App/js/home.js' %}"></script>
+    <script type="text/javascript">
+      var imagen1 = document.getElementById("imagen1");
+      var imagen2 = document.getElementById("imagen2");
+      var imagen3 = document.getElementById("imagen3");
+      var imagen4 = document.getElementById("imagen4");
+      var next = document.getElementById("next");
+      var prev = document.getElementById("prev");
+      var vacantes = document.getElementById("vacantes");
+      imagen1.onclick = function(e){
+        next.style.zIndex = "0";
+        prev.style.zIndex = "0";
+        vacantes.style.display = "none";        
+      }
+      imagen2.onclick = function(e){
+        next.style.zIndex = "0";
+        prev.style.zIndex = "0";
+        vacantes.style.display = "none";        
+      }
+      imagen3.onclick = function(e){
+        next.style.zIndex = "0";
+        prev.style.zIndex = "0";
+        vacantes.style.display = "none";        
+      }
+      imagen4.onclick = function(e){
+        next.style.zIndex = "0";
+        prev.style.zIndex = "0";
+        vacantes.style.display = "none";        
+      } 
+    </script>
+  </BODY>
+</HTML>

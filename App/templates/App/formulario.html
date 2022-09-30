@@ -1,0 +1,3441 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P46S4Q8');</script>
+        <!-- End Google Tag Manager -->
+        <TITLE>Formulario - Crystal S.A.S</TITLE>   
+        <link rel="shortcut icon" href="{% static 'App/images/crystal-sas.png' %}">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P46S4Q8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div class="container-fluid contenedor-formulario">
+            <div class="row">
+                <form id="form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="col s12">
+                        <div class="row">
+                            <h4>
+                                Quiero participar del proceso
+                            </h4>
+                            <div class="input-field" style="display: none">
+                                <input id="cargo" type="text" value="{{idCargos}}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5>
+                                Datos personales
+                            </h5>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="nombres" type="text" class="validate" title="" style="text-transform: capitalize;" onchange="ShowSelectedNombres();" required>
+                                <label for="nombres" style="font-size: 15px;color: black;">Nombres *</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="apellidos" type="text" class="validate" title="" style="text-transform: capitalize;" onchange="ShowSelectedApellidos();" required>
+                                <label for="apellidos" style="font-size: 15px;color: black;">Apellidos *</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <select class="browser-default" id="documento" title="" onchange="ShowSelectedDocumento();" style="font-size: 15px;color: black;" required>
+                                    <option value="" disabled selected>Documento de identificación *</option>
+                                    {% for d in documento %}
+                                    <option value="{{d}}">{{d}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="identificacion" type="text" title="" class="validate" onchange="ShowSelectedIdentificacion();" maxlength="15" onkeyup="this.value=Numeros(this.value)" required>
+                                <label for="identificacion" style="font-size: 15px;color: black;">N° de identificación *</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="color: #ab9eab;font-weight: 480;font-size: 15px;color: black;">Fecha de nacimiento *</p>
+                            <div class="input-field">
+                                <div class="col l4 m4 s12">
+                                    <select class="browser-default"  id="dia" name="dia" title="" onchange="ShowSelectedDia();" style="font-size: 15px;color: black;" required>
+                                        <option value="" disabled selected>Día</option>
+                                        {% for d in dias %}
+                                            <option value="{{d}}">{{d}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <br>
+                                </div>
+                                <div class="col l4 m4 s12">
+                                    <select class="browser-default"  id="mes" name="mes" title="" onchange="ShowSelectedMes();" style="font-size: 15px;color: black;" required>
+                                        <option value="" disabled selected>Mes</option>
+                                        {% for d in meses %}
+                                            <option value="{{d.id}}">{{d.mes}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <br>
+                                </div>
+                                <div class="col l4 m4 s12">
+                                    <select class="browser-default"  id="anio" name="anio" title="" onchange="ShowSelectedAnio();" style="font-size: 15px;color: black;" required>
+                                        <option value="" disabled selected>Año</option>
+                                        {% for a in anios %}
+                                            <option value="{{a}}">{{a}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <br>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="input-field">
+                                <select class="browser-default"  id="paisNac" name="paisNac" title="" onchange="ShowSelectedPais();" style="font-size: 15px;color: black;" required>
+                                    <option value="" disabled selected>País de nacimiento *</option>
+                                    {% for p in resultPais %}
+                                        <option value="{{p.name}}">{{p.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <select class="browser-default"  id="depNacim" name="depNacim" title="" onchange="ShowSelectedDep();" style="font-size: 15px;color: black;" data-tooltip="Selecciona primero el país de nacimiento. <br>Luego espere que la opción cambie a '<b>Selecciona departamento de nacimiento</b>'" required>
+                                    <option value="" disabled selected>Departamento de nacimiento *</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <select class="browser-default"  id="ciudadNacim" name="ciudadNacim" title="" onchange="ShowSelectedCiudadNacim();" style="font-size: 15px;color: black;" data-tooltip="Selecciona primero el departamento de nacimiento. <br>Luego espere que la opción cambie a '<b>Selecciona ciudad de nacimiento</b>'" required>
+                                    <option value="" disabled selected>Ciudad de nacimiento *</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="color: #ab9eab;font-weight: 480;font-size: 15px;color: black;">Género *</p>
+                            <div class="col l12 m12 s12">
+                                <a class="waves-effect waves-light genero btn-large" type="submit" id="femenino"><i class="fa fa-female"></i></a>
+                                <a class="waves-effect waves-light genero btn-large" type="submit" id="masculino"><i class="fa fa-male"></i></a>
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                            <div class="input-field" >
+                                <p style="color: #ab9eab;font-weight: 480;font-size: 15px;color: black;">Trabajo o he trabajado en Crystal o en sus empresas filiales</p>
+                                <select class="browser-default" id="trabajoEnCrystal" title="" onchange="ShowSelectedTrabajoEnCrystal();" style="font-size: 15px;color: black;" required>
+                                    <option value="" disabled selected>¿En cual?</option>
+                                    {% for t in trabajoEnCrystal %}
+                                        <option value="{{t}}">{{t}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="subtitulo-formulario">
+                                Contacto
+                            </div>
+                        </div>                                    
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="email" type="email" class="validate" title="" onchange="ShowSelectedEmail();" required>
+                                <label for="email" style="font-size: 15px;color: black;">Correo *</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="telefono" type="text" class="validate" title="" onkeyup="this.value=Numeros(this.value)" onchange="ShowSelectedTelefono();" required>
+                                <label for="telefono" style="font-size: 15px;color: black;">Teléfono *</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="telefonoOp" type="text" title="" class="validate" onkeyup="this.value=Numeros(this.value)" onchange="ShowSelectedTelefonoOp();">  
+                                <label for="telefonoOp" style="font-size: 15px;color: black;">Teléfono adicional</label>
+                                <span class="span-gray">opcional</span >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="subtitulo-formulario">
+                                Lugar de residencia
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <select class="browser-default" id="depResi" name="depResi" title="" onchange="ShowSelectedDepResi();" style="font-size: 15px;color: black;" required>
+                                    <option value="" disabled selected>Departamento de residencia *</option>
+                                    {% for d in resultDepart %}
+                                        {% if d.id_country == 82 %}
+                                            <option value="{{d.name}}">{{d.name}}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>                
+                        <div class="row">
+                            <div class="input-field">
+                                <select class="browser-default" id="ciudadResi" name="ciudadResi" onchange="ShowSelectedCiudadResi();" style="font-size: 15px;color: black;" data-tooltip="Selecciona primero el departamento de residencia. <br>Luego espere que la opción cambie a '<b>Selecciona ciudad de residencia</b>'" title="" required>
+                                    <option value="" disabled selected>Ciudad de residencia *</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="address" type="text" class="validate" title="" onchange="ShowSelectedAddress();" required>
+                                <label for="address" style="font-size: 15px;color: black;">Dirección *</label>
+                            </div>
+                        </div>
+                        -->
+                        <div class="row">
+                            <div class="subtitulo-formulario">
+                                Dirección 
+                            </div>
+                        </div>
+                        <div class="row" style="margin-block-end: 0%;">
+                            <div class="col l4 m12 s12 input-field">
+                                <select class="browser-default" id="tipoVia" name="tipoVia" onchange="ShowSelectedDreccion();" style="font-size: 15px;color: black;" title="" required>
+                                    <option value="" disabled selected>Tipo de vía *</option>
+                                    {% for t in tipoVia %}
+                                        <option value="{{t}}">{{t}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col l4 m12 s12 input-field">
+                                <input id="numDireccion" type="text" class="validate" title="" onkeyup="this.value=Numeros(this.value)" onchange="ShowSelectedDreccion();" required>
+                                <label for="numDireccion" style="font-size: 15px;color: black;">Número dirección *</label>
+                            </div>
+                            <div class="col l4 m12 s12 input-field">
+                                <select class="browser-default" id="letraDire" name="letraDire" onchange="ShowSelectedDreccion();" style="font-size: 15px;color: black;" title="">
+                                    <option value="" disabled selected>Letra</option>
+                                    {% for t in letraDire %}
+                                        <option value="{{t}}">{{t}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-block-end: 0%;">
+                            <div class="col l4 m12 s12 input-field">
+                                <select class="browser-default" id="cuadrante" name="cuadrante" onchange="ShowSelectedDreccion();" style="font-size: 15px;color: black;" title="">
+                                    <option value="" disabled selected>Cuadrante</option>
+                                    {% for t in cuadrante %}
+                                        <option value="{{t}}">{{t}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col l4 m12 s12 input-field">
+                                <input id="numDireccion1" type="text" class="validate" title="" onkeyup="this.value=Numeros(this.value)" onchange="ShowSelectedDreccion();">
+                                <label for="numDireccion1" style="font-size: 15px;color: black;">Número dirección 1</label>
+                            </div>
+                            <div class="col l4 m12 s12 input-field">
+                                <select class="browser-default" id="letraDire1" name="letraDire1" onchange="ShowSelectedDreccion();" style="font-size: 15px;color: black;" title="">
+                                    <option value="" disabled selected>Letra 1</option>
+                                    {% for t in letraDire %}
+                                        <option value="{{t}}">{{t}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-block-end: 0%;">
+                            <div class="col l4 m12 s12 input-field">
+                                <select class="browser-default" id="cuadrante1" name="cuadrante1" onchange="ShowSelectedDreccion();" style="font-size: 15px;color: black;" title="">
+                                    <option value="" disabled selected>Cuadrante 1</option>
+                                    {% for t in cuadrante %}
+                                        <option value="{{t}}">{{t}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col l4 m12 s12 input-field">
+                                <input id="numDireccion2" type="text" class="validate" title="" onkeyup="this.value=Numeros(this.value)" onchange="ShowSelectedDreccion();">
+                                <label for="numDireccion2" style="font-size: 15px;color: black;">Número dirección 2</label>
+                            </div>
+                            <div class="col l4 m12 s12 input-field">
+                                <select class="browser-default" id="claseVivienda" name="claseVivienda" onchange="ShowSelectedDreccion();" style="font-size: 15px;color: black;" title="">
+                                    <option value="" disabled selected>Clase de vivienda</option>
+                                    {% for t in claseVivienda %}
+                                        <option value="{{t}}">{{t}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-block-end: 0%;">
+                            <div class="col l4 m12 s12 input-field">
+                                <input id="numDireccion3" type="text" class="validate" title="" onkeyup="this.value=Numeros(this.value)" onchange="ShowSelectedDreccion();">
+                                <label for="numDireccion3" style="font-size: 15px;color: black;">Número dirección 3</label>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-block-end: 0%;">
+                            <div class="col s12 input-field">
+                                <textarea id="direccionComple" type="text" title="" disabled></textarea>
+                                <span>Dirección completa</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="subtitulo-formulario">
+                                Estudios
+                            </div>
+                        </div>
+                        <div class="row">
+                            <fieldset id="AdiciEstu">
+
+                            </fieldset> 
+                            <button style="cursor: pointer;" title="" type="button" class="waves-effect waves-light idioma btn" id="addEstu">+ Adicionar Estudio</button>
+                        </div>
+                        <div class="row">
+                            <div class="subtitulo-formulario">
+                                Tus idiomas
+                            </div>
+                        </div>
+                        <div class="row">
+                            <fieldset id="Adicidioma">
+
+                            </fieldset>
+                            <button style="cursor: pointer;" title="" type="button" class="waves-effect waves-light idioma btn" id="add">+ Adicionar idioma</button>
+                        </div>
+                        <div class="row">
+                            <div class="subtitulo-formulario">
+                                Experiencia laboral
+                            </div>
+                        </div>
+                        <div class="row">
+                            <fieldset id="Expelaboral">
+
+                            </fieldset>
+                            <button style="cursor: pointer;" title="" type="button" class="waves-effect waves-light idioma btn" id="addExp">+ Adicionar empresa</button>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                            <div class="subtitulo-formulario">
+                                Áreas de interés
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <select class="browser-default" id="areasInte" title="" style="font-size: 15px;color: black;" onchange="ShowSelectedAreasInte();" required>
+                                    <option value="" disabled selected>Áreas de interés *</option>
+                                    {% for a in areaInteres %}
+                                        <option value="{{a}}">{{a}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="areaInteOtr" type="text" title="" class="validate" onchange="ShowSelectedAreasInteOtr();">
+                                <label for="areaInteOtr" style="font-size: 15px;color: black;">Áreas de interés (otras)</label>
+                                <span class="span-gray">opcional</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="ultiSal" type="text" class="validate" title="" onchange="ShowSelectedUltiSal();" onkeyup="this.value=Numeros(this.value)" required>
+                                <label for="ultiSal" style="font-size: 15px;color: black;">Último salario recibido *</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <select class="browser-default" id="aspSal"  title="" style="font-size: 15px;color: black;" onchange="ShowSelectedAspSal();" required>
+                                    <option value="" disabled selected>Aspiración salarial *</option>
+                                    {% for s in aspSal %}
+                                        <option value="{{s}}">{{s}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="subtitulo-formulario">
+                                Adjuntar hoja de vida
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="file-field input-field" id="fileDiv">
+                                <div class="adjuntar btn">
+                                    <i class="fa fa-file icono-archivo"></i> Subir
+                                        <input id="file" type="file" name="archivoHV" accept="application/pdf, .doc" onchange="ShowSelectedArchivo();" required>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" title="" style="font-size: 15px;color: black;" placeholder="Sube un archivo">
+                                </div>
+                                <span class="span-gray">Los ficheros deben ser inferiores a: 2 MB</span>
+                                <br>
+                                <span class="span-gray">Ficheros permitidos: pdf, .doc</span>
+                            </div>                           
+                        </div>                   
+                        <div class="row">
+                            <p>
+                                <label>
+                                <input type="checkbox" id="politica" value="check" required/>
+                                <span class="span-gray">Consiento que mis datos sean utilizados para esta vacante y para futuros 
+                                procesos de selección que encajen con mi perfil. Para ello acepto la
+                                <a class="modal-trigger" href="#modal1">Política de Privacidad</a> *</span> 
+                                </label>
+                            </p>
+                        </div>
+                        <div id="modal1" class="modal modal-fixed-footer">
+                            <div class="modal-content">
+                                <h5><b>POLÍTICA DE TRATAMIENTO PROTECCIÓN DE DATOS PERSONALES – CRYSTAL S.A.S</b></h5>
+                                <p>En cumplimiento a lo dispuesto en la Ley estatutaria 1581 de 2012, especialmente a 
+                                    lo dispuesto en sus artículos 9 y 12, a su Decreto Reglamentario 1377 de 2013 y 
+                                    las demás normas pertinentes, Crystal S.A.S, identificada con el NIT 890.901.672-5, 
+                                    informa la política de esta sociedad, como responsable del tratamiento de datos 
+                                    personales, para el tratamiento y protección de los mismos.
+                                </p>
+                                <br>
+                                <h6><b>I. IDENTIFICACIÓN DEL RESPONSABLE:</b></h6>
+                                <p><b>NOMBRE DEL RESPONSABLE:</b> CRYSTAL S.A.S<br>
+                                    <b>DIRECCIÓN:</b> Carrera 48 N 52 S 81 avenida las vegas, Sabaneta Antioquia <br>
+                                    <b>CORREO ELECTRÓNICO:</b> impuestos@crystal.com.co<br>
+                                    <b>TELEFÓNO DEL RESPONSABLE:</b> 2619000 EXT 2231
+                                </p>
+                                <br>
+                                <p><b>II. TRATAMIENTO Y FINALIDAD:</b></p>
+                                <p><b>TRATAMIENTO DE DATOS PERSONALES:</b><br>
+                                    La Sucursal CRYSTAL S.A.S, sujeta a las disposiciones constitucionales y legales, 
+                                    se regirá en su roll de responsable del tratamiento de datos personales por los 
+                                    principios rectores que en esta materia ha dispuesto el ordenamiento jurídico 
+                                    colombiano, estos son, según el artículo 4 de la ley 1581 de 2012:
+                                </p>
+                                <p><b>- PRINCIPIO DE LEGALIDAD EN MATERIA DE TRATAMIENTO DE DATOS:</b> 
+                                    CRYSTAL S.A.S administrará sus bases de datos de las cuales es responsable 
+                                    con total sujeción a los postulados constitucionales y legales que regulan la materia.
+                                </p>
+                                <p>
+                                    <b>- PRINCIPIO DE FINALIDAD:</b> 
+                                    La finalidad para la cual se administra y 
+                                    trata los datos personales será completamente ajustada a la ley; serán 
+                                    legítimamente utilizados para el desarrollo de las actividades comerciales,
+                                    operacionales y/o administrativas de la sociedad.
+                                </p>
+                                <p>
+                                    <b>- PRINCIPIO DE LIBERTAD:</b> 
+                                    CRYSTAL tratará únicamente aquellos datos de los cuales tenga consentimiento o 
+                                    aquellos que sin el consentimiento la ley les habilite para su tratamiento.
+                                </p>
+                                <p>
+                                    <b>- PRINCIPIO DE VERACIDAD O CALIDAD:</b> 
+                                    Se velará constantemente por el almacenamiento y tratamiento de información veraz, 
+                                    actual y exacta; así mismo se implementarán medidas permanentes que propendan por 
+                                    la actualización de los datos que se almacenan procurando el no tratamiento de 
+                                    datos parciales, incompletos, fraccionados o que induzcan a error, lo cual está 
+                                    expresamente prohibido en la ley.
+                                </p>
+                                <p>
+                                    <b>- PRINCIPIO DE TRANSPARENCIA:</b> 
+                                    CRYSTAL S.A.S dispondrá de un mecanismo de comunicación donde los titulares de 
+                                    los datos podrán acudir en cualquier tiempo con el ánimo de obtener información 
+                                    sobre los datos personales que son objeto de tratamiento por parte de esta 
+                                    sociedad y ejercitar los derechos que le asisten según el artículo 15 de la 
+                                    Constitución Política de Colombia (Derecho al Habeas Data).
+                                </p>
+                                <p>
+                                    <b>- PRINCIPIO DE ACCESO Y CIRCULACIÓN RESTRINGIDA:</b> 
+                                    Se garantiza el control y la restricción a los datos almacenados, 
+                                    especialmente a aquellos datos que por su naturaleza requieren un 
+                                    tratamiento especial (datos sensibles, de los niños, niñas y adolescentes.), 
+                                    de manera que sólo tendrán acceso a ellos quienes tengan la debida autorización.
+                                </p>
+                                <p>
+                                    <b>- PRINCIPIO DE SEGURIDAD:</b> 
+                                    Se tomarán las medidas necesarias y adecuadas para la protección de los datos 
+                                    almacenados no solamente por parte de CRYSTAL S.A.S como responsable del 
+                                    tratamiento de datos sino, también, por parte de cualquier encargado del 
+                                    tratamiento de los mismos.
+                                </p>
+                                <p>
+                                    <b>- PRINCIPIO DE CONFIDENCIALIDAD:</b> 
+                                    CRYSTAL S.A.S garantizará la confidencialidad de la información almacenada y 
+                                    realizará el suministro o comunicación de la misma únicamente cuando ello 
+                                    corresponda al desarrollo de las actividades autorizadas en la ley. En tal medida, 
+                                    CRYSTAL S.A.S únicamente recopilará y tratará los datos almacenados para el 
+                                    ejercicio y desarrollo de actividades propias de su objeto social, especialmente 
+                                    para para obtener, analizar o verificar información de candidatos que participan 
+                                    en procesos de Selección dentro de la compañía o sus afiliadas y para validar 
+                                    aspectos relacionados con su trayectoria laboral. Igualmente la información del 
+                                    aspirante, en caso de requerirse será utilizada para estudios de seguridad y 
+                                    realizar visitas domiciliarias previamente pactadas con el aspirante; para lo cual, 
+                                    eventualmente y sólo para los fines descritos, podrá compartir la información con 
+                                    empresas como COLHILADOS LTD., NICOLE S.A.S., PRINTEX S.A.S. TEXTIL DE HILOS E 
+                                    HILAZAS S.A.S., PARKDALE INC., CORPORACIÓN CIMARRONA S.A.S.INVERBORDADOS S.A.S, 
+                                    además de aquellas empresas que fungirán como encargadas del tratamiento y que 
+                                    tratarán las bases de datos de CRYSTAL SAS bajo los parámetros que exige la ley.                                   
+                                </p>
+                                <br>
+                                <p>
+                                    <b>III. DERECHOS QUE LE ASISTEN A LOS TITULARES DE LOS DATOS:</b>
+                                </p>
+                                <p>
+                                    En pleno desarrollo de las disposiciones del artículo 15 de la Constitución Política 
+                                    de Colombia y sus normas reglamentarias, al titular de los datos personales le 
+                                    asisten los siguientes Derechos:
+                                </p>
+                                <p>
+                                    <b>Derecho de conocer:</b> Al titular de los datos le asiste el Derecho de conocer qué 
+                                    datos personales suyos tienen en su poder los responsables y/o encargados del 
+                                    tratamiento de datos.<br>
+                                    <b>Derecho de actualizar:</b> Al titular de los datos le asiste el Derecho de actualizar 
+                                    permanentemente los datos que son tratados por el responsable y/o encargado del 
+                                    tratamiento de datos con el ánimo de que los mismos estén ajustados a la realidad 
+                                    y permitan una calidad óptima de la información.<br>
+                                    <b>Derecho de rectificar:</b> Al titular de los datos le asiste el Derecho de rectificar 
+                                    los datos personales que el responsable y/o encargado del tratamiento estén tratando 
+                                    por encontrarlo errado.<br>
+                                    <b>Derecho de suprimir:</b> Al titular de los datos le asiste el Derecho a dar de baja 
+                                    de las bases de datos tratadas por el responsable y/o encargado del dato en el 
+                                    momento que así lo desee.<br>
+                                    <b>Derecho de revocar la autorización:</b> Al titular de los datos personales le asiste 
+                                    el Derecho de revocar la autorización que fuera otorgada inicialmente para el 
+                                    tratamiento de los datos por parte del responsable.
+                                </p>
+                                <p>
+                                    Esta revocatoria puede ser total o parcial según el titular así lo quieren, 
+                                    y siempre que se informe de tal situación oportunamente.
+                                </p>
+                                <p>
+                                    El titular de los datos personales tendrá la facultad de decidir responder o no 
+                                    a las preguntas que le sean hechas cuando las mismas versen sobre datos sensibles 
+                                    o sobre datos de las niñas, niños y adolescentes, como lo dispone el literal “b” 
+                                    del artículo 12 de la ley 1581. En ningún caso serán tratados los datos personales 
+                                    que, requiriéndolo, no cuenten con el consentimiento previo, expreso e informado 
+                                    del titular al tenor del artículo 9 de la ley 1581.
+                                </p>
+                                <br>
+                                <p>
+                                    <b>IV. PERSONA RESPONSABLE Y PROCEDIMIENTO PARA LA ATENCIÓN DE LAS CONSULTAS, PETICIONES Y RECLAMOS:</b>
+                                </p>
+                                <p>
+                                    CRYSTAL S.A.S, en aras de establecer un canal permanente de comunicación con los 
+                                    titulares de los datos, facilitando de esta manera la atención oportuna y 
+                                    permanente a sus consultas, peticiones y reclamos, ha dispuesto que quien 
+                                    quiera ejercer su derecho de conocer, rectificar, suprimir o revocar autorización, 
+                                    podrá comunicarse expresando claramente la intención de su comunicación al correo 
+                                    electrónico Proteccionbasedatos@crystal.com.co, dirigido a Julian Aristizabal Escobar.<br>
+                                    Una vez recibido el correo por parte del funcionario de CRYSTAL S.A.S, esta 
+                                    sociedad contará con un término de 15 días para dar respuesta al mismo por 
+                                    el mismo medio.
+                                </p>
+                                <br>
+                                <p>
+                                    <b>V. VIGENCIA DE LA BASE DE DATOS:</b>
+                                </p>
+                                <p>
+                                    Esta política entrará en vigencia a partir del día 22 de febrero de 2016 y cualquier 
+                                    modificación sustancial a la misma será informada oportunamente a través de los 
+                                    medios idóneos con los que se cuente para tales fines.<br>
+                                    De esta manera Crystal S.A.S cumple con la normatividad vigente y aplicable a la 
+                                    materia de protección y tratamiento de datos personales a nivel nacional.
+
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                            </div>
+                        </div>
+                        <div class="row enviar">
+                            <button type="submit" id="enviar" class="waves-effect waves-light formulario btn-large">Enviar formulario</button>
+                        </div>
+                        <div class="col s12"  style="text-align: -webkit-center;display: none;" id="load">
+                            <div class="preloader-wrapper small active">
+                                <div class="spinner-layer spinner-green-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p style="text-align: center;">¡Espere un momento, por favor!</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'App/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'App/css/formulario.css' %}">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="{% static 'App/js/formulario.js' %}"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LfSM6saAAAAAKDKSFz07KrFs_bsOEn02foBi-q_" async defer></script> 
+       
+        <script type="text/javascript">
+            function Numeros(string){
+                var out = '';
+                var filtro = '1234567890';
+                
+                for (var i=0; i<string.length; i++)
+                    if (filtro.indexOf(string.charAt(i)) != -1) 
+                        out += string.charAt(i);
+                
+                return out;
+            } 
+            $(document).ready(function(){
+                $("#enviar").click(function(){
+                    document.getElementById("enviar").style.display="none";
+                    document.getElementById("load").style.display="";
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute('6LfSM6saAAAAAKDKSFz07KrFs_bsOEn02foBi-q_', {
+                            action: 'validar'
+                        }).then(function(token) {
+                            try{          
+                                validar()                                
+                            }catch{
+                                document.getElementById("enviar").style.display="";
+                                document.getElementById("load").style.display="none";
+                            }
+                        });
+                    });
+                })
+            })
+            $(document).ready(function() {
+                $('#ciudadResi').tooltip({
+                    position: 'right',
+                    html: true
+                });
+                $('#ciudadNacim').tooltip({
+                    position: 'right',
+                    html: true
+                });
+                $('#depNacim').tooltip({
+                    position: 'right',
+                    html: true
+                });
+                arrayFormacion=formacion();
+                $("#addEstu").click(function() {
+                    for(var i = 1; i <= 4; i++){              
+                        if(i<=4 && document.getElementById("formacion"+i)==null){
+                            var fieldWrapper = $("<div class=\"row\"/>");
+                            var fnivel = $("<div class=\"col l12 m12 s12 input-field\"> <select id=\"formacion" + i + "\" class=\"browser-default\" onchange='ShowSelectedEstudio(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\" required><option value=\"\" disabled selected>Nivel de estudio *</option>" + arrayFormacion+"</div>");
+                            var farea = $("<div class=\"col l12 m12 s12 input-field\"><select class=\"browser-default\" id=\"areasEst" + i + "\" name=\"areasEst" + i + "\" onchange='ShowSelectedAreasEst(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\" required><option value=\"\" disabled selected>Área * </option></div>");
+                            var ftar = $("<div class=\"col l12 m12 s12 input-field\"><select id=\"tarProfe" + i + "\" class=\"browser-default\" onchange='ShowSelectedTarProfe(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\" required><option value=\"\" disabled selected>Tarjeta profesional * </option>"+tarjetaPro()+"</div>");
+                            var finstitucion = $("<div class=\"col l12 m12 s12 input-field\"><p style=\"color: #ab9eab;cursor: auto;font-weight: 480;font-size: 15px;color: black;margin:0%;\">Institución *</p><input id=\"institucion" + i + "\" type =\"text\" class=\"validate\" title=\"\" onchange='ShowSelectedInstitucion(\""+ i+"\");' required>");
+                            var fmes = $("<div class=\"col l12 m12 s12 input-field\"><p style=\"color: #ab9eab;cursor: auto;font-weight: 480;font-size: 15px;color: black;margin:0%\">Fecha finalización *</p></div><div class=\"col l6 m6 s12\" style=\"margin-block-end:4%;\"><select id=\"mesEstu" + i + "\" class=\"browser-default\" onchange='ShowSelectedMesEstu(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\" required><option value=\"\" disabled selected>Mes * </option>"+mesEstu()+"</div>");
+                            var fanio = $("<div class=\"col l6 m6 s12\"><select id=\"anioEstu" + i + "\" class=\"browser-default\" onchange='ShowSelectedAnioEstu(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\" required><option value=\"\" disabled selected>Año * </option>"+anioEstu()+"</div>");
+                            var removeButton = $("<div class=\"col l12 m12 s12\" style=\"margin-top:2%;\"><input type=\"submit\" id=\"eliminar"+i+"\" class=\"waves-effect waves-light btn right\" style=\"color:white;background-color:rgb(187 187 187);font-weight: 500;\" value=\"Eliminar\" /><br><br></div>");
+                            var div = $("<br></div>")
+                            removeButton.click(function() {
+                                var parent = $(this).parent().get(0);
+                                $(parent).remove();
+                            });
+                            fieldWrapper.append(fnivel);
+                            fieldWrapper.append(farea);
+                            fieldWrapper.append(ftar);
+                            fieldWrapper.append(finstitucion);
+                            fieldWrapper.append(fmes);
+                            fieldWrapper.append(fanio);
+                            fieldWrapper.append(removeButton);
+                            fieldWrapper.append(div);
+                            $("#AdiciEstu").append(fieldWrapper);
+
+                            i=5
+                        }else{
+                        }
+                    }
+                });
+
+                $("#add").click(function() {
+                    for(var i = 1; i <= 3; i++){              
+                        if(i<=3 && document.getElementById("idioma"+i)==null){
+                            document.getElementById("add").style.display=""
+                            var fieldWrapper = $("<div class=\"input-field\"/>");
+                            var fType = $("<br><select id=\"idioma" + i + "\" class=\"browser-default\" onchange='ShowSelectedIdioma(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\"><option value=\"\" disabled selected>Idioma</option>" + prueba());
+                            var fnivel = $("<br><select id=\"nivel" + i + "\" class=\"browser-default\" onchange='ShowSelectedNivel(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\"><option value=\"\" disabled selected>Nivel</option><option value=\"Alto\">Alto</option><option value=\"Medio\">Medio</option><option value=\"Bajo\">Bajo</option></select>");
+                            var removeButton = $("<br><input type=\"submit\" class=\"waves-effect waves-light btn right\" style=\"color:white;background-color:rgb(187 187 187);font-weight: 500;\" value=\"Eliminar\" /><br>");
+                            removeButton.click(function() {
+                                $(this).parent().remove();
+                            });
+                            fieldWrapper.append(fType);
+                            fieldWrapper.append(fnivel);
+                            fieldWrapper.append(removeButton);
+                            $("#Adicidioma").append(fieldWrapper);
+                            i=4
+                        }
+                    }
+                });
+
+                $("#addExp").click(function() {
+                    for(var i = 1; i <= 10; i++){              
+                        if(i<=10 && document.getElementById("empresa"+i)==null){
+                            var fieldWrapper = $("<div class=\"input-field\"/>");
+                            var fType = $("<br><p style=\"color: #ab9eab;cursor: auto;font-weight: 480;font-size: 15px;color: black;\">Empresa*<input id=\"empresa" + i + "\" type =\"text\" class=\"validate\" title=\"\" onchange='ShowSelectedEmpresa(\""+ i+"\");' required></p>");
+                            var fcargo = $("<p style=\"color: #ab9eab;cursor: auto;font-weight: 480;font-size: 15px;color: black;\">Cargo*<input id=\"cargo" + i + "\" type =\"text\" class=\"validate\" title=\"\" onchange='ShowSelectedCargo(\""+ i+"\");' required></p>");
+                            var ffunciones = $("<p style=\"color: #ab9eab;cursor: auto;font-weight: 480;font-size: 15px;color: black;\">Funciones y logros*</p><textarea id=\"funciones" + i + "\" class=\"validate\" onchange='ShowSelectedFunciones(\""+ i+"\");' style=\"height: 280px;\" title=\"\" required></textarea>");
+                            var fmes = $("<p style=\"color: #ab9eab;cursor: auto;font-weight: 480;font-size: 15px;color: black;\">Fecha finalización*<div class=\"col l6 m6 s12\" style=\"margin-block-end:4%;\"><select id=\"mesExp" + i + "\" class=\"browser-default\" onchange='ShowSelectedMesExp(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\" required><option value=\"\" disabled selected>Mes * </option>"+mesEstu()+"</div>");
+                            var fanio = $("<div class=\"col l6 m6 s12\"><select id=\"anioExp" + i + "\" class=\"browser-default\" onchange='ShowSelectedAnioExp(\""+ i+"\");' title=\"\" style=\"font-size: 15px;color: black;\" required><option value=\"\" disabled selected>Año * </option>"+anioEstu()+"</p></div>");
+                            var removeButton = $("<div class=\"col l12 m12 s12\" style=\"margin-top:2%;\"><input type=\"submit\" class=\"waves-effect waves-light btn right\" style=\"color:white;background-color:rgb(187 187 187);font-weight: 500;\" value=\"Eliminar\" /><br><\div>");
+                            var div = $("</div><br><br>")
+                            removeButton.click(function() {
+                                $(this).parent().remove();
+                            });
+                            fieldWrapper.append(fType);
+                            fieldWrapper.append(fcargo);
+                            fieldWrapper.append(ffunciones);
+                            fieldWrapper.append(fmes);
+                            fieldWrapper.append(fanio);
+                            fieldWrapper.append(removeButton);
+                            fieldWrapper.append(div);
+                            $("#Expelaboral").append(fieldWrapper);
+                            i=11
+                        }
+                    }
+                });
+                
+            });
+
+            function formacion(){
+                var Forma='{{formacion}}'
+                var array = Forma.split("*") 
+                
+                for(i in array){
+                    array[i] = array[i].replace("&lt;/option&gt","</option>").replace("&lt;","<").replace("&quot;","").replace("&quot;&gt;",">")
+                }
+                return array;                
+            }            
+
+            function prueba(){
+                var Losidiomas='{{idi}}'
+                var array = Losidiomas.split("*") 
+                for(i in array){
+                    array[i] = array[i].replace("&lt;/option&gt","</option>").replace("&lt;","<").replace("&quot;","").replace("&quot;&gt;",">")
+                }
+                return array;
+            }
+
+            function tarjetaPro(){
+                var tarjeta='{{tarProfe}}'
+                var array = tarjeta.split("*") 
+                for(i in array){
+                    array[i] = array[i].replace("&lt;/option&gt","</option>").replace("&lt;","<").replace("&quot;","").replace("&quot;&gt;",">")
+                }
+                return array;
+            }
+            function mesEstu(){
+                var mes='{{mesEstu}}'
+                var array = mes.split("*") 
+                for(i in array){
+                    array[i] = array[i].replace("&lt;/option&gt","</option>").replace("&lt;","<").replace("&quot;","").replace("&quot;&gt;",">")
+                }
+                return array;
+            }
+            function anioEstu(){
+                var anio='{{anioEstu}}'
+                var array = anio.split("*") 
+                for(i in array){
+                    array[i] = array[i].replace("&lt;/option&gt","</option>").replace("&lt;","<").replace("&quot;","").replace("&quot;&gt;",">")
+                }
+                return array;
+            }
+
+            $(document).ready(function(){
+                $('.modal').modal();
+            });
+
+            function ShowSelectedDreccion(){
+                tipoVia = document.getElementById("tipoVia").value;
+                numDireccion = document.getElementById("numDireccion").value;
+                letraDire = document.getElementById("letraDire").value;
+                cuadrante = document.getElementById("cuadrante").value;
+                numDireccion1 = document.getElementById("numDireccion1").value;
+                letraDire1 = document.getElementById("letraDire1").value;
+                cuadrante1 = document.getElementById("cuadrante1").value;
+                numDireccion2 = document.getElementById("numDireccion2").value;
+                claseVivienda = document.getElementById("claseVivienda").value;
+                numDireccion3 = document.getElementById("numDireccion3").value;
+                var btntipoVia = document.getElementById("tipoVia");   
+                var btnletraDire = document.getElementById("letraDire");   
+                var btncuadrante = document.getElementById("cuadrante");   
+                var btnletraDire1 = document.getElementById("letraDire1");   
+                var btncuadrante1 = document.getElementById("cuadrante1");   
+                var btnclaseVivienda = document.getElementById("claseVivienda");  
+
+                if(tipoVia){             
+                    btntipoVia.style.background="#e8f0fe"
+                    btntipoVia.style.border="2px solid #4caf50"
+                }else{
+                    btntipoVia.style.background="white"
+                    btntipoVia.style.border="1px solid #9e9e9e"
+                    tipoVia=""
+                }
+                if(letraDire){             
+                    btnletraDire.style.background="#e8f0fe"
+                    btnletraDire.style.border="2px solid #4caf50"
+                }else{
+                    btnletraDire.style.background="white"
+                    btnletraDire.style.border="1px solid #9e9e9e"
+                    letraDire=""
+                }
+                if(cuadrante){             
+                    btncuadrante.style.background="#e8f0fe"
+                    btncuadrante.style.border="2px solid #4caf50"
+                }else{
+                    btncuadrante.style.background="white"
+                    btncuadrante.style.border="1px solid #9e9e9e"
+                    cuadrante=""
+                }
+                if(letraDire1){             
+                    btnletraDire1.style.background="#e8f0fe"
+                    btnletraDire1.style.border="2px solid #4caf50"
+                }else{
+                    btnletraDire1.style.background="white"
+                    btnletraDire1.style.border="1px solid #9e9e9e"
+                    letraDire1=""
+                }
+                if(cuadrante1){             
+                    btncuadrante1.style.background="#e8f0fe"
+                    btncuadrante1.style.border="2px solid #4caf50"
+                }else{
+                    btncuadrante1.style.background="white"
+                    btncuadrante1.style.border="1px solid #9e9e9e"
+                    cuadrante1=""
+                }
+                if(claseVivienda){             
+                    btnclaseVivienda.style.background="#e8f0fe"
+                    btnclaseVivienda.style.border="2px solid #4caf50"
+                }else{
+                    btnclaseVivienda.style.background="white"
+                    btnclaseVivienda.style.border="1px solid #9e9e9e"
+                    claseVivienda=""
+                }
+                if (cuadrante=="Sin selección"){
+                    cuadrante=""
+                }
+                if (cuadrante1=="Sin selección"){
+                    cuadrante1=""
+                }
+
+                direccionCompleta = tipoVia + " " + numDireccion + " " + letraDire + " " + cuadrante + " " + numDireccion1 + 
+                " " + letraDire1 + " " + cuadrante1 + " " +numDireccion2 + " " + claseVivienda + " " + numDireccion3
+
+                document.getElementById("direccionComple").value=direccionCompleta
+            }
+
+            function ShowSelectedPais(){
+                paisNacim = document.getElementById("paisNac").value;
+                let paisNac = document.getElementById("paisNac").value;
+                let url="/depNacim/?paisNac="+paisNac;
+                fetch(url)
+                .then(function(result){
+                    return result.text();
+                })
+                .then(function(result){
+                    document.getElementById("depNacim").innerHTML = result;
+                });
+                var btnpaisNac = document.getElementById("paisNac");   
+                if(paisNacim){             
+                    btnpaisNac.style.background="#e8f0fe"
+                    btnpaisNac.style.border="2px solid #4caf50"
+                }else{
+                    btnpaisNac.style.background="white"
+                    btnpaisNac.style.border="1px solid #9e9e9e"
+                    paisNacim=""
+                }
+            }
+
+            function ShowSelectedDep(){
+                depNac = document.getElementById("depNacim").value;
+                let depNacim = document.getElementById("depNacim").value;
+                let url="/ciudadNacim/?depNacim="+depNacim;
+                fetch(url)
+                .then(function(result){
+                    return result.text();
+                })
+                .then(function(result){
+                    document.getElementById("ciudadNacim").innerHTML = result;
+                });
+                var btndepNacim = document.getElementById("depNacim");
+            
+                if(depNac){
+                    btndepNacim.style.background="#e8f0fe"
+                    btndepNacim.style.border="2px solid #4caf50"
+                }else{
+                    btndepNacim.style.background="white"
+                    btndepNacim.style.border="1px solid #9e9e9e"
+                    depNac=""
+                }
+            }
+            
+            function ShowSelectedDepResi(){
+                depResiden = document.getElementById("depResi").value;
+                let depResi = document.getElementById("depResi").value;
+                let url="/ciudadResi/?depResi="+depResi;
+                fetch(url)
+                .then(function(result){
+                    return result.text();
+                })
+                .then(function(result){ 
+                    document.getElementById("ciudadResi").innerHTML = result;
+                });
+                var btndepResi = document.getElementById("depResi");
+            
+                if(depResiden){
+                    btndepResi.style.background="#e8f0fe"
+                    btndepResi.style.border="2px solid #4caf50"
+                }else{
+                    btndepResi.style.background="white"
+                    btndepResi.style.border="1px solid #9e9e9e"
+                    depResiden=""
+                }
+            }
+            
+            function ShowSelectedEstudio(num){
+                if(num==1 && document.getElementById("formacion1").value!=""){
+                    try{
+                        formacion1 = document.getElementById("formacion1").value;
+                        if(formacion1 != ""){
+                            formacion1 = document.getElementById("formacion1").value;
+                            let forma = document.getElementById("formacion1").value;
+                            let url="/estudios/?formacion="+forma;
+                            fetch(url)
+                            .then(function(result){
+                                return result.text();
+                            })
+                            .then(function(result){
+                                document.getElementById("areasEst1").innerHTML = result;
+                            });
+                        }
+                        
+                        var btnformacion1 = document.getElementById("formacion1");
+                
+                        if(formacion1){
+                            btnformacion1.style.background="#e8f0fe"
+                            btnformacion1.style.border="2px solid #4caf50"
+                        }else{
+                            btnformacion1.style.background="white"
+                            btnformacion1.style.border="1px solid #9e9e9e"
+                            formacion1=""
+                        }
+                    }catch{
+                        formacion1 = ""
+                    }
+                }else{
+                    
+                }
+
+                if(num==2 && document.getElementById("formacion2").value!=""){
+                    try{
+                        formacion2 = document.getElementById("formacion2").value;
+                        if(formacion2 != ""){
+                            formacion2 = document.getElementById("formacion2").value;
+                            let forma = document.getElementById("formacion2").value;
+                            let url="/estudios/?formacion="+forma;
+                            fetch(url)
+                            .then(function(result){
+                                return result.text();
+                            })
+                            .then(function(result){
+                                document.getElementById("areasEst2").innerHTML = result;
+                            });
+                        }
+                        
+                        var btnformacion2 = document.getElementById("formacion2");
+                
+                        if(formacion2){
+                            btnformacion2.style.background="#e8f0fe"
+                            btnformacion2.style.border="2px solid #4caf50"
+                        }else{
+                            btnformacion2.style.background="white"
+                            btnformacion2.style.border="1px solid #9e9e9e"
+                            formacion2=""
+                        }
+                    }catch{
+                        formacion2 = ""
+                    }
+                }else{
+                    
+                }
+                if(num==3 && document.getElementById("formacion3").value!=""){
+                    try{
+                        formacion3 = document.getElementById("formacion3").value;
+                        if(formacion3 != ""){
+                            formacion3 = document.getElementById("formacion3").value;
+                            let forma = document.getElementById("formacion3").value;
+                            let url="/estudios/?formacion="+forma;
+                            fetch(url)
+                            .then(function(result){
+                                return result.text();
+                            })
+                            .then(function(result){
+                                document.getElementById("areasEst3").innerHTML = result;
+                            });
+                        }
+                        
+                        var btnformacion3 = document.getElementById("formacion3");
+                
+                        if(formacion3){
+                            btnformacion3.style.background="#e8f0fe"
+                            btnformacion3.style.border="2px solid #4caf50"
+                        }else{
+                            btnformacion3.style.background="white"
+                            btnformacion3.style.border="1px solid #9e9e9e"
+                            formacion3=""
+                        }
+                    }catch{
+                        formacion3 = ""
+                    }
+                }else{
+                    
+                }
+                if(num==4 && document.getElementById("formacion4").value!=""){
+                    try{
+                        formacion4 = document.getElementById("formacion4").value;
+                        if(formacion4 != ""){
+                            formacion4 = document.getElementById("formacion4").value;
+                            let forma = document.getElementById("formacion4").value;
+                            let url="/estudios/?formacion="+forma;
+                            fetch(url)
+                            .then(function(result){
+                                return result.text();
+                            })
+                            .then(function(result){
+                                document.getElementById("areasEst4").innerHTML = result;
+
+                            });
+
+                        }
+                        
+                        var btnformacion4 = document.getElementById("formacion4");
+                
+                        if(formacion4){
+                            btnformacion4.style.background="#e8f0fe"
+                            btnformacion4.style.border="2px solid #4caf50"
+                        }else{
+                            btnformacion4.style.background="white"
+                            btnformacion4.style.border="1px solid #9e9e9e"
+                            formacion4=""
+                        }
+                    }catch(error){
+                        formacion4 = ""
+                    }
+                }else{
+                    
+                }
+            }
+
+            
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            const csrftoken = getCookie('csrftoken');
+
+            var form= document.getElementById('form')
+            form.addEventListener('submit', function(e){
+                e.preventDefault()
+            })
+            
+            var btnFemenino = document.getElementById("femenino");
+            var btnMasculino = document.getElementById("masculino");
+            
+            btnFemenino.onclick = function(e){
+                btnFemenino.style.background="#e8f0fe"
+                btnMasculino.style.background="transparent"
+                btnFemenino.style.border="2px solid #4caf50"
+                btnMasculino.style.border="0px solid"
+            }
+
+            btnMasculino.onclick = function(e){
+                btnFemenino.style.background="transparent"
+                btnMasculino.style.background="#e8f0fe"
+                btnMasculino.style.border="2px solid #4caf50"
+                btnFemenino.style.border="0px solid"
+            }
+
+            function ShowSelectedArchivo() {
+                file = document.getElementById("file").value;
+                var btnfile = document.getElementById("fileDiv");
+                if ($('input[type=file]')[0].files[0].type == "application/pdf"
+                || $('input[type=file]')[0].files[0].type == "application/msword"){         
+
+                    if($('input[type=file]')[0].files[0].size > 2000000){
+                        alert("El archivo no debe superar los 2MB")
+                        document.getElementById("file").value="";
+
+                        btnfile.style.background="white"
+                        M.toast({html: 'NO se adjuntó la hoja de vida!', classes: 'rounded'})
+                    }else{
+                        btnfile.style.background="#e8f0fe"
+                        M.toast({html: 'La hoja de vida se adjuntó correctamente!', classes: 'rounded'})
+                    }             
+                }else{
+                    alert("Solo se permiten archivos con formato pdf, .doc")
+                    btnfile.style.background="white"
+                    document.getElementById("file").value="";
+                    M.toast({html: 'NO se adjuntó la hoja de vida!', classes: 'rounded'})
+                    
+                }
+            }
+
+            function ShowSelectedNombres() {
+                gen=""
+                nombres = document.getElementById("nombres").value;
+                var btnnombres = document.getElementById("nombres");
+                if(nombres){
+                    btnnombres.style.background="#e8f0fe"
+                }else{
+                    btnnombres.style.background="white"
+                    nombres=""
+                }
+            }
+
+            function ShowSelectedApellidos() {
+                apellidos = document.getElementById("apellidos").value;
+                var btnapellidos = document.getElementById("apellidos");
+                if(apellidos){
+                    btnapellidos.style.background="#e8f0fe"
+                }else{
+                    btnapellidos.style.background="white"
+                    apellidos=""
+                }
+            }
+
+            function ShowSelectedDocumento() {
+                documento = document.getElementById("documento").value;
+                var btndocumento = document.getElementById("documento");
+                if(documento){
+                    btndocumento.style.background="#e8f0fe"
+                    btndocumento.style.border="2px solid #4caf50"
+                }else{
+                    btndocumento.style.background="white"
+                    btndocumento.style.border="1px solid #9e9e9e"
+                    documento=""
+                }
+            }
+
+            function ShowSelectedIdentificacion() {
+                identificacion = document.getElementById("identificacion").value;
+                var btnidentificacion = document.getElementById("identificacion");
+                if(identificacion){
+                    btnidentificacion.style.background="#e8f0fe"
+                }else{
+                    btnidentificacion.style.background="white"
+                    identificacion=""
+                }
+            }
+
+            function ShowSelectedDia() {
+                dia = document.getElementById("dia").value;
+                var btndia = document.getElementById("dia");
+            
+                if(dia){
+                    btndia.style.background="#e8f0fe"
+                    btndia.style.border="2px solid #4caf50"
+                }else{
+                    btndia.style.background="white"
+                    btndia.style.border="1px solid #9e9e9e"
+                    dia=""
+                }
+            }
+
+            function ShowSelectedMes() {
+                mes = document.getElementById("mes").value;
+                var btnmes = document.getElementById("mes");
+            
+                if(mes){
+                    btnmes.style.background="#e8f0fe"
+                    btnmes.style.border="2px solid #4caf50"
+                }else{
+                    btnmes.style.background="white"
+                    btnmes.style.border="1px solid #9e9e9e"
+                    mes=""
+                }
+            }
+            function ShowSelectedAnio() {
+                anio = document.getElementById("anio").value;
+                var btnanio = document.getElementById("anio");
+            
+                if(anio){
+                    btnanio.style.background="#e8f0fe"
+                    btnanio.style.border="2px solid #4caf50"
+                }else{
+                    btnanio.style.background="white"
+                    btnanio.style.border="1px solid #9e9e9e"
+                    anio=""
+                }
+            }
+            function ShowSelectedCiudadNacim() {
+                ciudadNac = document.getElementById("ciudadNacim").value;
+                var btnciudadNacim = document.getElementById("ciudadNacim");
+            
+                if(ciudadNac){
+                    btnciudadNacim.style.background="#e8f0fe"
+                    btnciudadNacim.style.border="2px solid #4caf50"
+                }else{
+                    btnciudadNacim.style.background="white"
+                    btnciudadNacim.style.border="1px solid #9e9e9e"
+                    ciudadNac=""
+                }
+            }
+            function ShowSelectedCiudadResi() {
+                ciudadResi = document.getElementById("ciudadResi").value;
+                var btciudadResi = document.getElementById("ciudadResi");
+            
+                if(ciudadResi){
+                    btciudadResi.style.background="#e8f0fe"
+                    btciudadResi.style.border="2px solid #4caf50"
+                }else{
+                    btciudadResi.style.background="white"
+                    btciudadResi.style.border="1px solid #9e9e9e"
+                    ciudadResi=""
+                }
+            }
+            function ShowSelectedIdioma(num) {
+                if(num==1){
+                    try{
+                        idioma1 = document.getElementById("idioma"+num).value;
+                        var btidioma1 = document.getElementById("idioma"+num);
+                
+                        if(idioma1){
+                            btidioma1.style.background="#e8f0fe"
+                            btidioma1.style.border="2px solid #4caf50"
+                        }else{
+                            btidioma1.style.background="white"
+                            btidioma1.style.border="1px solid #9e9e9e"
+                            idioma1=""
+                        }
+                    }catch{
+                        idioma1 = ""
+                    }
+                }
+                if(num==2){         
+                    try{
+                        idioma2 = document.getElementById("idioma"+num).value;
+                        var btnidioma2 = document.getElementById("idioma"+num);
+                
+                        if(idioma2){
+                            btnidioma2.style.background="#e8f0fe"
+                            btnidioma2.style.border="2px solid #4caf50"
+                        }else{
+                            btnidioma2.style.background="white"
+                            btnidioma2.style.border="1px solid #9e9e9e"
+                            idioma2=""
+                        }
+                    }catch{
+                        idioma2 = ""
+                    }  
+                }
+                if(num==3){         
+                    try{
+                        idioma3 = document.getElementById("idioma3").value;
+                        var btnidioma3 = document.getElementById("idioma3");
+                
+                        if(idioma3){
+                            btnidioma3.style.background="#e8f0fe"
+                            btnidioma3.style.border="2px solid #4caf50"
+                        }else{
+                            btnidioma3.style.background="white"
+                            btnidioma3.style.border="1px solid #9e9e9e"
+                            idioma3=""
+                        }
+                    }catch{
+                        idioma3 = ""
+                    }
+                }
+            }
+            function ShowSelectedNivel(num){
+                if(num==1){
+                    try{
+                        nivel1 = document.getElementById("nivel"+num).value;
+                        var btnivel1 = document.getElementById("nivel"+num);
+                
+                        if(nivel1){
+                            btnivel1.style.background="#e8f0fe"
+                            btnivel1.style.border="2px solid #4caf50"
+                        }else{
+                            btnivel1.style.background="white"
+                            btnivel1.style.border="1px solid #9e9e9e"
+                            nivel1=""
+                        }
+                    }catch{
+                        nivel1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        nivel2 = document.getElementById("nivel"+num).value;
+                        var btnivel2 = document.getElementById("nivel"+num);
+                
+                        if(nivel2){
+                            btnivel2.style.background="#e8f0fe"
+                            btnivel2.style.border="2px solid #4caf50"
+                        }else{
+                            btnivel2.style.background="white"
+                            btnivel2.style.border="1px solid #9e9e9e"
+                            nivel2=""
+                        }
+                    }catch{
+                        nivel2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        nivel3 = document.getElementById("nivel"+num).value;
+                        var btnnivel3 = document.getElementById("nivel"+num);
+                
+                        if(nivel3){
+                            btnnivel3.style.background="#e8f0fe"
+                            btnnivel3.style.border="2px solid #4caf50"
+                        }else{
+                            btnnivel3.style.background="white"
+                            btnnivel3.style.border="1px solid #9e9e9e"
+                            nivel3=""
+                        }
+                    }catch{
+                        nivel3 = ""
+                    }
+                }
+            }
+            function ShowSelectedAreasEst(num){
+                if(num==1){
+                    try{
+                        areasEst1 = document.getElementById("areasEst"+num).value;
+                        var btnareasEst1 = document.getElementById("areasEst"+num);
+                
+                        if(areasEst1){
+                            btnareasEst1.style.background="#e8f0fe"
+                            btnareasEst1.style.border="2px solid #4caf50"
+                        }else{
+                            btnareasEst1.style.background="white"
+                            btnareasEst1.style.border="1px solid #9e9e9e"
+                            areasEst1=""
+                        }
+                    }catch{
+                        areasEst1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        areasEst2 = document.getElementById("areasEst"+num).value;
+                        var btnareasEst2 = document.getElementById("areasEst"+num);
+                
+                        if(areasEst2){
+                            btnareasEst2.style.background="#e8f0fe"
+                            btnareasEst2.style.border="2px solid #4caf50"
+                        }else{
+                            btnareasEst2.style.background="white"
+                            btnareasEst2.style.border="1px solid #9e9e9e"
+                            areasEst2=""
+                        }
+                    }catch{
+                        areasEst2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        areasEst3 = document.getElementById("areasEst"+num).value;
+                        var btnareasEst3 = document.getElementById("areasEst"+num);
+                
+                        if(areasEst3){
+                            btnareasEst3.style.background="#e8f0fe"
+                            btnareasEst3.style.border="2px solid #4caf50"
+                        }else{
+                            btnareasEst3.style.background="white"
+                            btnareasEst3.style.border="1px solid #9e9e9e"
+                            areasEst3=""
+                        }
+                    }catch{
+                        areasEst3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        areasEst4 = document.getElementById("areasEst"+num).value;
+                        var btnareasEst4 = document.getElementById("areasEst"+num);
+                
+                        if(areasEst4){
+                            btnareasEst4.style.background="#e8f0fe"
+                            btnareasEst4.style.border="2px solid #4caf50"
+                        }else{
+                            btnareasEst4.style.background="white"
+                            btnareasEst4.style.border="1px solid #9e9e9e"
+                            areasEst4=""
+                        }
+                    }catch{
+                        areasEst4 = ""
+                    }
+                }
+            }
+            function ShowSelectedTarProfe(num){       
+                if(num==1){
+                    try{
+                        tarProfe1 = document.getElementById("tarProfe"+num).value;
+                        var btntarProfe1 = document.getElementById("tarProfe"+num);
+                
+                        if(tarProfe1){
+                            btntarProfe1.style.background="#e8f0fe"
+                            btntarProfe1.style.border="2px solid #4caf50"
+                        }else{
+                            btntarProfe1.style.background="white"
+                            btntarProfe1.style.border="1px solid #9e9e9e"
+                            tarProfe1 = ""
+                        }
+                    }catch{
+                        tarProfe1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        tarProfe2 = document.getElementById("tarProfe"+num).value;
+                        var btntarProfe2 = document.getElementById("tarProfe"+num);
+                
+                        if(tarProfe2){
+                            btntarProfe2.style.background="#e8f0fe"
+                            btntarProfe2.style.border="2px solid #4caf50"
+                        }else{
+                            btntarProfe2.style.background="white"
+                            btntarProfe2.style.border="1px solid #9e9e9e"
+                            tarProfe2 = ""
+                        }
+                    }catch{
+                        tarProfe2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        tarProfe3 = document.getElementById("tarProfe"+num).value;
+                        var btntarProfe3 = document.getElementById("tarProfe"+num);
+                
+                        if(tarProfe3){
+                            btntarProfe3.style.background="#e8f0fe"
+                            btntarProfe3.style.border="2px solid #4caf50"
+                        }else{
+                            btntarProfe3.style.background="white"
+                            btntarProfe3.style.border="1px solid #9e9e9e"
+                            tarProfe3=""
+                        }
+                    }catch{
+                        tarProfe3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        tarProfe4 = document.getElementById("tarProfe"+num).value;
+                        var btntarProfe4 = document.getElementById("tarProfe"+num);
+                
+                        if(tarProfe4){
+                            btntarProfe4.style.background="#e8f0fe"
+                            btntarProfe4.style.border="2px solid #4caf50"
+                        }else{
+                            btntarProfe4.style.background="white"
+                            btntarProfe4.style.border="1px solid #9e9e9e"
+                            tarProfe4 = ""
+                        }
+                    }catch{
+                        tarProfe4 = ""
+                    }
+                }
+            }
+            function ShowSelectedMesEstu(num){
+                if(num==1){
+                    try{
+                        mesEstu1 = document.getElementById("mesEstu"+num).value;
+                        var btnmesEstu1 = document.getElementById("mesEstu"+num);
+                
+                        if(mesEstu1){
+                            btnmesEstu1.style.background="#e8f0fe"
+                            btnmesEstu1.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesEstu1.style.background="white"
+                            btnmesEstu1.style.border="1px solid #9e9e9e"
+                            mesEstu1 = ""
+                        }
+                    }catch{
+                        mesEstu1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        mesEstu2 = document.getElementById("mesEstu"+num).value;
+                        var btnmesEstu2 = document.getElementById("mesEstu"+num);
+                
+                        if(mesEstu2){
+                            btnmesEstu2.style.background="#e8f0fe"
+                            btnmesEstu2.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesEstu2.style.background="white"
+                            btnmesEstu2.style.border="1px solid #9e9e9e"
+                            mesEstu2 = ""
+                        }
+                    }catch{
+                        mesEstu2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        mesEstu3 = document.getElementById("mesEstu"+num).value;
+                        var btnmesEstu3 = document.getElementById("mesEstu"+num);
+                
+                        if(mesEstu3){
+                            btnmesEstu3.style.background="#e8f0fe"
+                            btnmesEstu3.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesEstu3.style.background="white"
+                            btnmesEstu3.style.border="1px solid #9e9e9e"
+                            mesEstu3 = ""
+                        }
+                    }catch{
+                        mesEstu3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        mesEstu4 = document.getElementById("mesEstu"+num).value;
+                        var btnmesEstu4 = document.getElementById("mesEstu"+num);
+                
+                        if(mesEstu4){
+                            btnmesEstu4.style.background="#e8f0fe"
+                            btnmesEstu4.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesEstu4.style.background="white"
+                            btnmesEstu4.style.border="1px solid #9e9e9e"
+                            mesEstu4 = ""
+                        }
+                    }catch{
+                        mesEstu4 = ""
+                    }
+                }
+            }
+            function ShowSelectedAnioEstu(num){       
+                if(num==1){
+                    try{
+                        anioEstu1 = document.getElementById("anioEstu"+num).value;
+                        var btnanioEstu1 = document.getElementById("anioEstu"+num);
+                
+                        if(anioEstu1){
+                            btnanioEstu1.style.background="#e8f0fe"
+                            btnanioEstu1.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioEstu1.style.background="white"
+                            btnanioEstu1.style.border="1px solid #9e9e9e"
+                            anioEstu1 = ""
+                        }
+                    }catch{
+                        anioEstu1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        anioEstu2 = document.getElementById("anioEstu"+num).value;
+                        var btnanioEstu2 = document.getElementById("anioEstu"+num);
+                
+                        if(anioEstu2){
+                            btnanioEstu2.style.background="#e8f0fe"
+                            btnanioEstu2.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioEstu2.style.background="white"
+                            btnanioEstu2.style.border="1px solid #9e9e9e"
+                            anioEstu2 = ""
+                        }
+                    }catch{
+                        anioEstu2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        anioEstu3 = document.getElementById("anioEstu"+num).value;
+                        var btnanioEstu3 = document.getElementById("anioEstu"+num);
+                
+                        if(anioEstu3){
+                            btnanioEstu3.style.background="#e8f0fe"
+                            btnanioEstu3.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioEstu3.style.background="white"
+                            btnanioEstu3.style.border="1px solid #9e9e9e"
+                            anioEstu3 = ""
+                        }
+                    }catch{
+                        anioEstu3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        anioEstu4 = document.getElementById("anioEstu"+num).value;
+                        var btnanioEstu4 = document.getElementById("anioEstu"+num);
+                
+                        if(anioEstu4){
+                            btnanioEstu4.style.background="#e8f0fe"
+                            btnanioEstu4.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioEstu4.style.background="white"
+                            btnanioEstu4.style.border="1px solid #9e9e9e"
+                            anioEstu4 = ""
+                        }
+                    }catch{
+                        anioEstu4 = ""
+                    }
+                }
+            }
+            function ShowSelectedAnioExp(num){  
+                if(num==1){
+                    try{
+                        anioExp1 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp1 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp1){
+                            btnanioExp1.style.background="#e8f0fe"
+                            btnanioExp1.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp1.style.background="white"
+                            btnanioExp1.style.border="1px solid #9e9e9e"
+                            anioExp1 = ""
+                        }
+                    }catch{
+                        anioExp1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        anioExp2 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp2 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp2){
+                            btnanioExp2.style.background="#e8f0fe"
+                            btnanioExp2.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp2.style.background="white"
+                            btnanioExp2.style.border="1px solid #9e9e9e"
+                            anioExp2 = ""
+                        }
+                    }catch{
+                        anioExp2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        anioExp3 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp3 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp3){
+                            btnanioExp3.style.background="#e8f0fe"
+                            btnanioExp3.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp3.style.background="white"
+                            btnanioExp3.style.border="1px solid #9e9e9e"
+                            anioExp3 = ""
+                        }
+                    }catch{
+                        anioExp3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        anioExp4 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp4 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp4){
+                            btnanioExp4.style.background="#e8f0fe"
+                            btnanioExp4.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp4.style.background="white"
+                            btnanioExp4.style.border="1px solid #9e9e9e"
+                            anioExp4 = ""
+                        }
+                    }catch{
+                        anioExp4 = ""
+                    }
+                }
+                if(num==5){
+                    try{
+                        anioExp5 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp5 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp5){
+                            btnanioExp5.style.background="#e8f0fe"
+                            btnanioExp5.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp5.style.background="white"
+                            btnanioExp5.style.border="1px solid #9e9e9e"
+                            anioExp5 = ""
+                        }
+                    }catch{
+                        anioExp5 = ""
+                    }
+                }
+                if(num==6){
+                    try{
+                        anioExp6 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp6 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp6){
+                            btnanioExp6.style.background="#e8f0fe"
+                            btnanioExp6.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp6.style.background="white"
+                            btnanioExp6.style.border="1px solid #9e9e9e"
+                            anioExp6 = ""
+                        }
+                    }catch{
+                        anioExp6 = ""
+                    }
+                }
+                if(num==7){
+                    try{
+                        anioExp7 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp7 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp7){
+                            btnanioExp7.style.background="#e8f0fe"
+                            btnanioExp7.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp7.style.background="white"
+                            btnanioExp7.style.border="1px solid #9e9e9e"
+                            anioExp7 = ""
+                        }
+                    }catch{
+                        anioExp7 = ""
+                    }
+                }
+                if(num==8){
+                    try{
+                        anioExp8 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp8 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp8){
+                            btnanioExp8.style.background="#e8f0fe"
+                            btnanioExp8.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp8.style.background="white"
+                            btnanioExp8.style.border="1px solid #9e9e9e"
+                            anioExp8 = ""
+                        }
+                    }catch{
+                        anioExp8 = ""
+                    }
+                }
+                if(num==9){
+                    try{
+                        anioExp9 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp9 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp9){
+                            btnanioExp9.style.background="#e8f0fe"
+                            btnanioExp9.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp9.style.background="white"
+                            btnanioExp9.style.border="1px solid #9e9e9e"
+                            anioExp9 = ""
+                        }
+                    }catch{
+                        anioExp9 = ""
+                    }
+                }
+                if(num==10){
+                    try{
+                        anioExp10 = document.getElementById("anioExp"+num).value;
+                        var btnanioExp10 = document.getElementById("anioExp"+num);
+                
+                        if(anioExp10){
+                            btnanioExp10.style.background="#e8f0fe"
+                            btnanioExp10.style.border="2px solid #4caf50"
+                        }else{
+                            btnanioExp10.style.background="white"
+                            btnanioExp10.style.border="1px solid #9e9e9e"
+                            anioExp10 = ""
+                        }
+                    }catch{
+                        anioExp10 = ""
+                    }
+                }     
+            }
+            function ShowSelectedMesExp(num){  
+                if(num==1){
+                    try{
+                        mesExp1 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp1 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp1){
+                            btnmesExp1.style.background="#e8f0fe"
+                            btnmesExp1.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp1.style.background="white"
+                            btnmesExp1.style.border="1px solid #9e9e9e"
+                            mesExp1 = ""
+
+                        }
+                    }catch{
+                        mesExp1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        mesExp2 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp2 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp2){
+                            btnmesExp2.style.background="#e8f0fe"
+                            btnmesExp2.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp2.style.background="white"
+                            btnmesExp2.style.border="1px solid #9e9e9e"
+                            mesExp2 = ""
+                        }
+                    }catch{
+                        mesExp2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        mesExp3 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp3 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp3){
+                            btnmesExp3.style.background="#e8f0fe"
+                            btnmesExp3.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp3.style.background="white"
+                            btnmesExp3.style.border="1px solid #9e9e9e"
+                            mesExp3 = ""
+                        }
+                    }catch{
+                        mesExp3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        mesExp4 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp4 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp4){
+                            btnmesExp4.style.background="#e8f0fe"
+                            btnmesExp4.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp4.style.background="white"
+                            btnmesExp4.style.border="1px solid #9e9e9e"
+                            mesExp4 = ""
+                        }
+                    }catch{
+                        mesExp4 = ""
+                    }
+                }
+                if(num==5){
+                    try{
+                        mesExp5 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp5 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp5){
+                            btnmesExp5.style.background="#e8f0fe"
+                            btnmesExp5.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp5.style.background="white"
+                            btnmesExp5.style.border="1px solid #9e9e9e"
+                            mesExp5 = ""
+                        }
+                    }catch{
+                        mesExp5 = ""
+                    }
+                }
+                if(num==6){
+                    try{
+                        mesExp6 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp6 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp6){
+                            btnmesExp6.style.background="#e8f0fe"
+                            btnmesExp6.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp6.style.background="white"
+                            btnmesExp6.style.border="1px solid #9e9e9e"
+                            mesExp6 = ""
+                        }
+                    }catch{
+                        mesExp6 = ""
+                    }
+                }
+                if(num==7){
+                    try{
+                        mesExp7 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp7 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp7){
+                            btnmesExp7.style.background="#e8f0fe"
+                            btnmesExp7.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp7.style.background="white"
+                            btnmesExp7.style.border="1px solid #9e9e9e"
+                            mesExp7 = ""
+                        }
+                    }catch{
+                        mesExp7 = ""
+                    }
+                }
+                if(num==8){
+                    try{
+                        mesExp8 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp8 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp8){
+                            btnmesExp8.style.background="#e8f0fe"
+                            btnmesExp8.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp8.style.background="white"
+                            btnmesExp8.style.border="1px solid #9e9e9e"
+                            mesExp8 = ""
+                        }
+                    }catch{
+                        mesExp8 = ""
+                    }
+                }
+                if(num==9){
+                    try{
+                        mesExp9 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp9 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp9){
+                            btnmesExp9.style.background="#e8f0fe"
+                            btnmesExp9.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp9.style.background="white"
+                            btnmesExp9.style.border="1px solid #9e9e9e"
+                            mesExp9 = ""
+                        }
+                    }catch{
+                        mesExp9 = ""
+                    }
+                }
+                if(num==10){
+                    try{
+                        mesExp10 = document.getElementById("mesExp"+num).value;
+                        var btnmesExp10 = document.getElementById("mesExp"+num);
+                
+                        if(mesExp10){
+                            btnmesExp10.style.background="#e8f0fe"
+                            btnmesExp10.style.border="2px solid #4caf50"
+                        }else{
+                            btnmesExp10.style.background="white"
+                            btnmesExp10.style.border="1px solid #9e9e9e"
+                            mesExp10 = ""
+                        }
+                    }catch{
+                        mesExp10 = ""
+                    }
+                }     
+            }
+            function ShowSelectedInstitucion(num){
+                if(num==1){
+                    try{
+                        institucion1 = document.getElementById("institucion"+num).value;
+                        var btninstitucion1 = document.getElementById("institucion"+num);
+                
+                        if(institucion1){
+                            btninstitucion1.style.background="#e8f0fe"
+                        }else{
+                            btninstitucion1.style.background="white"
+                            institucion1 = ""
+                        }
+                    }catch{
+                        institucion1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        institucion2 = document.getElementById("institucion"+num).value;
+                        var btninstitucion2 = document.getElementById("institucion"+num);
+                
+                        if(institucion2){
+                            btninstitucion2.style.background="#e8f0fe"
+                        }else{
+                            btninstitucion2.style.background="white"
+                            institucion2 = ""
+                        }
+                    }catch{
+                        institucion2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        institucion3 = document.getElementById("institucion"+num).value;
+                        var btninstitucion3 = document.getElementById("institucion"+num);
+                
+                        if(institucion3){
+                            btninstitucion3.style.background="#e8f0fe"
+                        }else{
+                            btninstitucion3.style.background="white"
+                            institucion3 = ""
+                        }
+                    }catch{
+                        institucion3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        institucion4 = document.getElementById("institucion"+num).value;
+                        var btninstitucion4 = document.getElementById("institucion"+num);
+                
+                        if(institucion4){
+                            btninstitucion4.style.background="#e8f0fe"
+                        }else{
+                            btninstitucion4.style.background="white"
+                            institucion4 = ""
+                        }
+                    }catch{
+                        institucion4 = ""
+                    }
+                }
+            }
+            function ShowSelectedAreasInte(){
+                areasInte = document.getElementById("areasInte").value;
+                var btnareasInte = document.getElementById("areasInte");
+            
+                if(areasInte){
+                    btnareasInte.style.background="#e8f0fe"
+                    btnareasInte.style.border="2px solid #4caf50"
+                }else{
+                    btnareasInte.style.background="white"
+                    btnareasInte.style.border="1px solid #9e9e9e"
+                    areasInte=""
+                }
+            }
+            function ShowSelectedAreasInteOtr(){
+                areasInteOtr = document.getElementById("areaInteOtr").value;
+                var btnareasInteOtr = document.getElementById("areaInteOtr");
+            
+                if(areasInteOtr){
+                    btnareasInteOtr.style.background="#e8f0fe"
+                }else{
+                    btnareasInteOtr.style.background="white"
+                    areasInteOtr=""
+                }
+            }
+            function ShowSelectedUltiSal(){
+                UltiSal = document.getElementById("ultiSal").value;
+                var btnUltiSal = document.getElementById("ultiSal");
+            
+                if(UltiSal){
+                    btnUltiSal.style.background="#e8f0fe"
+                }else{
+                    btnUltiSal.style.background="white"
+                    btnareasInteOtr.style.border="1px solid #9e9e9e"
+                    UltiSal=""
+                }
+            }
+            function ShowSelectedAspSal(){
+                aspSal = document.getElementById("aspSal").value;
+                var btnaspSal = document.getElementById("aspSal");
+            
+                if(aspSal){
+                    btnaspSal.style.background="#e8f0fe"
+                    btnaspSal.style.border="2px solid #4caf50"
+                }else{
+                    btnaspSal.style.background="white"
+                    btnaspSal.style.border="1px solid #9e9e9e"
+                    aspSal=""
+                }
+            }
+            function ShowSelectedTrabajoEnCrystal(){
+                trabajoEnCrystal = document.getElementById("trabajoEnCrystal").value; 
+                var btntrabajoEnCrystal = document.getElementById("trabajoEnCrystal");
+            
+                if(trabajoEnCrystal){
+                    btntrabajoEnCrystal.style.background="#e8f0fe"
+                    btntrabajoEnCrystal.style.border="2px solid #4caf50"
+                }else{
+                    btntrabajoEnCrystal.style.background="white"
+                    btntrabajoEnCrystal.style.border="1px solid #9e9e9e"
+                    trabajoEnCrystal=""
+                }    
+            }
+            function ShowSelectedEmail(){
+                email = document.getElementById("email").value;    
+                var btnemail = document.getElementById("email");
+            
+                if(email){
+                    btnemail.style.background="#e8f0fe"
+                }else{
+                    btnemail.style.background="white"
+                    email=""
+                }    
+            }
+            function ShowSelectedTelefono(){
+                telefono = document.getElementById("telefono").value;    
+                var btntelefono = document.getElementById("telefono");
+            
+                if(telefono){
+                    btntelefono.style.background="#e8f0fe"
+                }else{
+                    btntelefono.style.background="white"
+                    telefono=""
+                }    
+            }
+            function ShowSelectedTelefonoOp(){
+                telefonoOp = document.getElementById("telefonoOp").value;    
+                var btntelefonoOp = document.getElementById("telefonoOp");
+            
+                if(telefonoOp){
+                    btntelefonoOp.style.background="#e8f0fe"
+                }else{
+                    btntelefonoOp.style.background="white"
+                    telefonoOp=""
+                }    
+            }
+            function ShowSelectedEmpresa(num){
+                if(num==1){
+                    try{
+                        empresa1 = document.getElementById("empresa"+num).value;
+                        var btnempresa1 = document.getElementById("empresa"+num);
+                
+                        if(empresa1){
+                            btnempresa1.style.background="#e8f0fe"
+                        }else{
+                            btnempresa1.style.background="white"
+                            empresa1 = ""
+                        }
+                    }catch{
+                        empresa1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        empresa2 = document.getElementById("empresa"+num).value;
+                        var btnempresa2 = document.getElementById("empresa"+num);
+                
+                        if(empresa2){
+                            btnempresa2.style.background="#e8f0fe"
+                        }else{
+                            btnempresa2.style.background="white"
+                            empresa2 = ""
+                        }
+                    }catch{
+                        empresa2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        empresa3 = document.getElementById("empresa"+num).value;
+                        var btnempresa3 = document.getElementById("empresa"+num);
+                
+                        if(empresa3){
+                            btnempresa3.style.background="#e8f0fe"
+                        }else{
+                            btnempresa3.style.background="white"
+                            empresa3 = ""
+                        }
+                    }catch{
+                        empresa3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        empresa4 = document.getElementById("empresa"+num).value;
+                        var btnempresa4 = document.getElementById("empresa"+num);
+                
+                        if(empresa4){
+                            btnempresa4.style.background="#e8f0fe"
+                        }else{
+                            btnempresa4.style.background="white"
+                            empresa4 = ""
+                        }
+                    }catch{
+                        empresa4 = ""
+                    }
+                }
+                if(num==5){
+                    try{
+                        empresa5 = document.getElementById("empresa"+num).value;
+                        var btnempresa5 = document.getElementById("empresa"+num);
+                
+                        if(empresa5){
+                            btnempresa5.style.background="#e8f0fe"
+                        }else{
+                            btnempresa5.style.background="white"
+                            empresa5 = ""
+                        }
+                    }catch{
+                        empresa5 = ""
+                    }
+                }
+                if(num==6){
+                    try{
+                        empresa6 = document.getElementById("empresa"+num).value;
+                        var btnempresa6 = document.getElementById("empresa"+num);
+                
+                        if(empresa6){
+                            btnempresa6.style.background="#e8f0fe"
+                        }else{
+                            btnempresa6.style.background="white"
+                            empresa6 = ""
+                        }
+                    }catch{
+                        empresa6 = ""
+                    }
+                }
+                if(num==7){
+                    try{
+                        empresa7 = document.getElementById("empresa"+num).value;
+                        var btnempresa7 = document.getElementById("empresa"+num);
+                
+                        if(empresa7){
+                            btnempresa7.style.background="#e8f0fe"
+                        }else{
+                            btnempresa7.style.background="white"
+                            empresa7 = ""
+                        }
+                    }catch{
+                        empresa7 = ""
+                    }
+                }
+                if(num==8){
+                    try{
+                        empresa8 = document.getElementById("empresa"+num).value;
+                        var btnempresa8 = document.getElementById("empresa"+num);
+                
+                        if(empresa8){
+                            btnempresa8.style.background="#e8f0fe"
+                        }else{
+                            btnempresa8.style.background="white"
+                            empresa8 = ""
+                        }
+                    }catch{
+                        empresa8 = ""
+                    }
+                }
+                if(num==9){
+                    try{
+                        empresa9 = document.getElementById("empresa"+num).value;
+                        var btnempresa9 = document.getElementById("empresa"+num);
+                
+                        if(empresa9){
+                            btnempresa9.style.background="#e8f0fe"
+                        }else{
+                            btnempresa9.style.background="white"
+                            empresa9 = ""
+                        }
+                    }catch{
+                        empresa9 = ""
+                    }
+                }
+                if(num==10){
+                    try{
+                        empresa10 = document.getElementById("empresa"+num).value;
+                        var btnempresa10 = document.getElementById("empresa"+num);
+                
+                        if(empresa10){
+                            btnempresa10.style.background="#e8f0fe"
+                        }else{
+                            btnempresa10.style.background="white"
+                            empresa10 = ""
+                        }
+                    }catch{
+                        empresa10 = ""
+                    }
+                }                
+            }
+            function ShowSelectedCargo(num){
+                if(num==1){
+                    try{
+                        cargo1 = document.getElementById("cargo"+num).value;
+                        var btncargo1 = document.getElementById("cargo"+num);
+                
+                        if(cargo1){
+                            btncargo1.style.background="#e8f0fe"
+                        }else{
+                            btncargo1.style.background="white"
+                            cargo1 = ""
+                        }
+                    }catch{
+                        cargo1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        cargo2 = document.getElementById("cargo"+num).value;
+                        var btncargo2 = document.getElementById("cargo"+num);
+                
+                        if(cargo2){
+                            btncargo2.style.background="#e8f0fe"
+                        }else{
+                            btncargo2.style.background="white"
+                            cargo2 = ""
+                        }
+                    }catch{
+                        cargo2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        cargo3 = document.getElementById("cargo"+num).value;
+                        var btncargo3 = document.getElementById("cargo"+num);
+                
+                        if(cargo3){
+                            btncargo3.style.background="#e8f0fe"
+                        }else{
+                            btncargo3.style.background="white"
+                            cargo3 = ""
+                        }
+                    }catch{
+                        cargo3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        cargo4 = document.getElementById("cargo"+num).value;
+                        var btncargo4 = document.getElementById("cargo"+num);
+                
+                        if(cargo4){
+                            btncargo4.style.background="#e8f0fe"
+                        }else{
+                            btncargo4.style.background="white"
+                            cargo4 = ""
+                        }
+                    }catch{
+                        cargo4 = ""
+                    }
+                }
+                if(num==5){
+                    try{
+                        cargo5 = document.getElementById("cargo"+num).value;
+                        var btncargo5 = document.getElementById("cargo"+num);
+                
+                        if(cargo5){
+                            btncargo5.style.background="#e8f0fe"
+                        }else{
+                            btncargo5.style.background="white"
+                            cargo5 = ""
+                        }
+                    }catch{
+                        cargo5 = ""
+                    }
+                }
+                if(num==6){
+                    try{
+                        cargo6 = document.getElementById("cargo"+num).value;
+                        var btncargo6 = document.getElementById("cargo"+num);
+                
+                        if(cargo6){
+                            btncargo6.style.background="#e8f0fe"
+                        }else{
+                            btncargo6.style.background="white"
+                            cargo6 = ""
+                        }
+                    }catch{
+                        cargo6 = ""
+                    }
+                }
+                if(num==7){
+                    try{
+                        cargo7 = document.getElementById("cargo"+num).value;
+                        var btncargo7 = document.getElementById("cargo"+num);
+                
+                        if(cargo7){
+                            btncargo7.style.background="#e8f0fe"
+                        }else{
+                            btncargo7.style.background="white"
+                            cargo7 = ""
+                        }
+                    }catch{
+                        cargo7 = ""
+                    }
+                }
+                if(num==8){
+                    try{
+                        cargo8 = document.getElementById("cargo"+num).value;
+                        var btncargo8 = document.getElementById("cargo"+num);
+                
+                        if(cargo8){
+                            btncargo8.style.background="#e8f0fe"
+                        }else{
+                            btncargo8.style.background="white"
+                            cargo8 = ""
+                        }
+                    }catch{
+                        cargo8 = ""
+                    }
+                }
+                if(num==9){
+                    try{
+                        cargo9 = document.getElementById("cargo"+num).value;
+                        var btncargo9 = document.getElementById("cargo"+num);
+                
+                        if(cargo9){
+                            btncargo9.style.background="#e8f0fe"
+                        }else{
+                            btncargo9.style.background="white"
+                            cargo9 = ""
+                        }
+                    }catch{
+                        cargo9 = ""
+                    }
+                }
+                if(num==10){
+                    try{
+                        cargo10 = document.getElementById("cargo"+num).value;
+                        var btncargo10 = document.getElementById("cargo"+num);
+                
+                        if(cargo10){
+                            btncargo10.style.background="#e8f0fe"
+                        }else{
+                            btncargo10.style.background="white"
+                            cargo10 = ""
+                        }
+                    }catch{
+                        cargo10 = ""
+                    }
+                }                
+            }
+            function ShowSelectedFunciones(num){
+                if(num==1){
+                    try{
+                        funciones1 = document.getElementById("funciones"+num).value;
+                        var btnfunciones1 = document.getElementById("funciones"+num);
+                
+                        if(funciones1){
+                            btnfunciones1.style.background="#e8f0fe"
+                            btnfunciones1.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones1.style.background="white"
+                            btnfunciones1.style.border="1px solid #9e9e9e"
+                            funciones1 = ""
+                        }
+                    }catch{
+                        funciones1 = ""
+                    }
+                }
+                if(num==2){
+                    try{
+                        funciones2 = document.getElementById("funciones"+num).value;
+                        var btnfunciones2 = document.getElementById("funciones"+num);
+                
+                        if(funciones2){
+                            btnfunciones2.style.background="#e8f0fe"
+                            btnfunciones2.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones2.style.background="white"
+                            btnfunciones2.style.border="1px solid #9e9e9e"
+                            funciones2 = ""
+                        }
+                    }catch{
+                        funciones2 = ""
+                    }
+                }
+                if(num==3){
+                    try{
+                        funciones3 = document.getElementById("funciones"+num).value;
+                        var btnfunciones3 = document.getElementById("funciones"+num);
+                
+                        if(funciones3){
+                            btnfunciones3.style.background="#e8f0fe"
+                            btnfunciones3.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones3.style.background="white"
+                            btnfunciones3.style.border="1px solid #9e9e9e"
+                            funciones3 = ""
+                        }
+                    }catch{
+                        funciones3 = ""
+                    }
+                }
+                if(num==4){
+                    try{
+                        funciones4 = document.getElementById("funciones"+num).value;
+                        var btnfunciones4 = document.getElementById("funciones"+num);
+                
+                        if(funciones4){
+                            btnfunciones4.style.background="#e8f0fe"
+                            btnfunciones4.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones4.style.background="white"
+                            btnfunciones4.style.border="1px solid #9e9e9e"
+                            funciones4 = ""
+                        }
+                    }catch{
+                        funciones4 = ""
+                    }
+                }
+                if(num==5){
+                    try{
+                        funciones5 = document.getElementById("funciones"+num).value;
+                        var btnfunciones5 = document.getElementById("funciones"+num);
+                
+                        if(funciones5){
+                            btnfunciones5.style.background="#e8f0fe"
+                            btnfunciones5.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones5.style.background="white"
+                            btnfunciones5.style.border="1px solid #9e9e9e"
+                            funciones5 = ""
+                        }
+                    }catch{
+                        funciones5 = ""
+                    }
+                }
+                if(num==6){
+                    try{
+                        funciones6 = document.getElementById("funciones"+num).value;
+                        var btnfunciones6 = document.getElementById("funciones"+num);
+                
+                        if(funciones6){
+                            btnfunciones6.style.background="#e8f0fe"
+                            btnfunciones6.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones6.style.background="white"
+                            btnfunciones6.style.border="1px solid #9e9e9e"
+                            funciones6 = ""
+                        }
+                    }catch{
+                        funciones6 = ""
+                    }
+                }
+                if(num==7){
+                    try{
+                        funciones7 = document.getElementById("funciones"+num).value;
+                        var btnfunciones7 = document.getElementById("funciones"+num);
+                
+                        if(funciones7){
+                            btnfunciones7.style.background="#e8f0fe"
+                            btnfunciones7.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones7.style.background="white"
+                            btnfunciones7.style.border="1px solid #9e9e9e"
+                            funciones7 = ""
+                        }
+                    }catch{
+                        funciones7 = ""
+                    }
+                }
+                if(num==8){
+                    try{
+                        funciones8 = document.getElementById("funciones"+num).value;
+                        var btnfunciones8 = document.getElementById("funciones"+num);
+                
+                        if(funciones8){
+                            btnfunciones8.style.background="#e8f0fe"
+                            btnfunciones8.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones8.style.background="white"
+                            btnfunciones8.style.border="1px solid #9e9e9e"
+                            funciones8 = ""
+                        }
+                    }catch{
+                        funciones8 = ""
+                    }
+                }
+                if(num==9){
+                    try{
+                        funciones9 = document.getElementById("funciones"+num).value;
+                        var btnfunciones9 = document.getElementById("funciones"+num);
+                
+                        if(funciones9){
+                            btnfunciones9.style.background="#e8f0fe"
+                            btnfunciones9.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones9.style.background="white"
+                            btnfunciones9.style.border="1px solid #9e9e9e"
+                            funciones9 = ""
+                        }
+                    }catch{
+                        funciones9 = ""
+                    }
+                }
+                if(num==10){
+                    try{
+                        funciones10 = document.getElementById("funciones"+num).value;
+                        var btnfunciones10 = document.getElementById("funciones"+num);
+                
+                        if(funciones10){
+                            btnfunciones10.style.background="#e8f0fe"
+                            btnfunciones10.style.border="2px solid #4caf50"
+                        }else{
+                            btnfunciones10.style.background="white"
+                            btnfunciones10.style.border="1px solid #9e9e9e"
+                            funciones10 = ""
+                        }
+                    }catch{
+                        funciones10 = ""
+                    }
+                }                
+            }
+
+            document.getElementById('femenino').addEventListener('click',function(e){
+                gen = "Femenino"
+                
+            })
+
+            document.getElementById('masculino').addEventListener('click',function(e){
+                gen = "Masculino"
+            })
+
+            function validar(){
+                try{
+                    fechaNac = anio + "-"+mes+"-"+dia;
+                    if (form.telefonoOp.value==""){
+                        telefonoOp=""
+                    }else{
+                        telefonoOp=form.telefonoOp.value
+                    }
+                    try{
+                        idioma1 = document.getElementById("idioma1").value;
+                    }catch{
+                        idioma1=""
+                    }
+                    try{
+                        idioma2 = document.getElementById("idioma2").value;
+                    }catch{
+                        idioma2=""
+                    }
+                    try{
+                        idioma3 = document.getElementById("idioma3").value;
+                    }catch{
+                        idioma3=""
+                    }
+                    try{
+                        nivel1 = document.getElementById("nivel1").value;
+                    }catch{
+                        nivel1=""
+                    }
+                    try{
+                        nivel2 = document.getElementById("nivel2").value;
+                    }catch{
+                        nivel2=""
+                    }
+                    try{
+                        nivel3 = document.getElementById("nivel3").value;
+                    }catch{
+                        nivel3=""
+                    }
+                    if (form.telefonoOp.value==""){
+                        telefonoOp=""
+                    }else{
+                        telefonoOp=form.telefonoOp.value
+                    }
+                    if (form.areaInteOtr.value==""){
+                        areaInteOtr=""
+                    }else{
+                        areaInteOtr=form.areaInteOtr.value
+                    }
+                    cargo=form.cargo.value
+                    
+                    if (form.nombres.value=="" || form.apellidos.value==""  
+                    || documento=="" || form.identificacion.value=="" || dia=="" || mes=="" || anio=="" 
+                    || paisNacim=="" || depNac=="" || ciudadNac==""){                    
+                        document.getElementById("enviar").style.display="";
+                        document.getElementById("load").style.display="none";
+                        validacionn="no"
+                    }else{ 
+                        validacionn="si"
+
+                    }
+                                
+                    if (trabajoEnCrystal=="" || form.email.value=="" || form.telefono.value==""                        
+                    || direccionCompleta=="" || form.tipoVia.value=="" || form.numDireccion.value=="" || depResiden=="" || ciudadResi==""){
+                        document.getElementById("enviar").style.display="";
+                        document.getElementById("load").style.display="none";
+                        validaciont="no"
+                        
+                    }else{
+                        validaciont="si"
+
+                    }
+                    if (areasInte=="" && form.ultiSal.value=="" && aspSal==""){
+                        document.getElementById("enviar").style.display="";
+                        document.getElementById("load").style.display="none";
+                        validaciona="no"
+
+                    }else{
+                        validaciona="si"
+
+                    }
+                    if ($('input[type=file]')[0].files[0]===undefined){
+                        document.getElementById("enviar").style.display="";
+                        document.getElementById("load").style.display="none";
+                        validacionar="no"
+
+                    }else{
+                        validacionar="si"
+
+                    }
+                    if (document.getElementById('politica').value==""){
+                        document.getElementById("enviar").style.display="";
+                        document.getElementById("load").style.display="none";
+                        validacionp="no"
+
+                    }else{
+                        validacionp="si"
+
+                    }
+                    if (gen==""){
+                        alert("Por favor, ingresa el género")
+                        document.getElementById("enviar").style.display="";
+                        document.getElementById("load").style.display="none";
+                        validaciong="no"
+
+                    }else{
+                        validaciong="si"
+
+                    }
+                    try{
+                        if (form.formacion1.value=="" && form.formacion2.value=="" && form.formacion3.value=="" && form.formacion4.value==""){
+                            alert("Por favor, ingresa al menos un estudio")
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            validacione="no"
+                        }else{
+                            validacione="si"
+                            cont=4
+
+                        }
+
+                    }catch(error){
+                        alert("Por favor, ingresa al menos un estudio")
+
+                        validacione="no"
+                        cont=0
+                        
+                    }
+                    conintId = $("#AdiciEstu div.input-field").length;
+                    try{
+                        if (form.formacion1.value=="" || form.areasEst1.value=="" || form.tarProfe1.value=="" || 
+                        form.institucion1.value=="" || form.mesEstu1.value=="" || form.anioEstu1.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            cont=cont-1
+                            validacione="no"
+                        }else{
+                            validacione="si"
+
+                        }
+
+                    }catch(error){
+
+                    }
+                
+                
+                    try{
+                        if (form.formacion2.value=="" || form.areasEst2.value=="" || form.tarProfe2.value=="" || 
+                        form.institucion2.value=="" || form.mesEstu2.value=="" || form.anioEstu2.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            cont=cont-1
+                            validacione="no"
+
+                        }else{
+                            validacione="si"
+
+                        }
+
+                    }catch(error){
+                    }
+
+                
+                    try{
+                        if (form.formacion3.value=="" || form.areasEst3.value=="" || form.tarProfe3.value=="" || 
+                        form.institucion3.value=="" || form.mesEstu3.value=="" || form.anioEstu3.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            cont=cont-1
+                            validacione="no"
+
+                        }else{
+                            validacione="si"
+
+                        }
+                    }catch(error){
+                    }
+                    
+                    
+                    try{
+                        if (form.formacion4.value=="" || form.areasEst4.value=="" || form.tarProfe4.value=="" || 
+                        form.institucion4.value=="" || form.mesEstu4.value=="" || form.anioEstu4.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            cont=cont-1
+                            if (cont==0 && conintId==4){
+                                validacione="no"
+                            }
+
+                        }else{
+                            validacione="si"
+
+                        }
+                    }catch(error){
+
+                    }
+                    
+                    
+                    conEintId = $("#Expelaboral div.input-field").length;
+                    try{
+                        if (form.empresa1.value=="" && form.empresa2.value=="" && form.empresa3.value=="" && form.empresa4.value=="" &&
+                        form.empresa5.value=="" && form.empresa6.value=="" && form.empresa7.value=="" && form.empresa7.value=="" && 
+                        form.empresa9.value=="" && form.empresa10.value==""){
+                            alert("Por favor, ingresa al menos una experiencia laboral")
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            validacion="no"
+
+                        }else{
+                            validacion="si"
+                            con = 6
+
+                        }
+
+                    }catch(error){
+                        alert("Por favor, ingresa al menos una experiencia laboral")
+
+                        validacion="no"
+                        con=0
+                    }
+                    try{
+                        if (form.empresa1.value=="" || form.cargo1.value=="" || form.funciones1.value=="" || form.mesExp1.value=="" || form.anioExp1.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";                    
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }   
+
+                    }catch(error){
+                    }
+                    try{
+                        if (form.empresa2.value=="" || form.cargo2.value=="" || form.funciones2.value=="" || form.mesExp2.value=="" || form.anioExp2.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                            
+                        }else{
+                            validacion="si"
+
+                        }
+
+                    }catch(error){
+                    }
+                    try{
+                        if (form.empresa3.value=="" || form.cargo3.value=="" || form.funciones3.value=="" || form.mesExp3.value=="" || form.anioExp3.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }
+                    }catch(error){
+                    }
+                    try{
+                        if (form.empresa4.value=="" || form.cargo4.value=="" || form.funciones4.value=="" || form.mesExp4.value=="" || form.anioExp4.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }
+                    }catch(error){
+                    }
+                    try{
+                        if (form.empresa5.value=="" || form.cargo5.value=="" || form.funciones5.value=="" || form.mesExp5.value=="" || form.anioExp5.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }
+                    }catch(error){
+                    }
+                    try{
+                        if (form.empresa6.value=="" || form.cargo6.value=="" || form.funciones6.value=="" || form.mesExp6.value=="" || form.anioExp6.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }   
+                    }catch(error){
+                    }
+                    try{
+                        if (form.empresa7.value=="" || form.cargo7.value=="" || form.funciones7.value=="" || form.mesExp7.value=="" || form.anioExp7.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }   
+                    }catch(error){
+                    }    
+                    try{
+                        if (form.empresa8.value=="" || form.cargo8.value=="" || form.funciones8.value=="" || form.mesExp8.value=="" || form.anioExp8.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }
+                    }catch(error){
+                    }
+                    try{
+                        if (form.empresa9.value=="" || form.cargo9.value=="" || form.funciones9.value=="" || form.mesExp9.value=="" || form.anioExp9.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }   
+                    }catch(error){
+                    }
+                    try{
+                        if (form.empresa10.value=="" || form.cargo10.value=="" || form.funciones10.value=="" || form.mesExp10.value=="" || form.anioExp10.value==""){
+                            document.getElementById("enviar").style.display="";
+                            document.getElementById("load").style.display="none";
+                            con=con-1
+                            validacion="no"
+                        }else{
+                            validacion="si"
+
+                        }   
+                    }catch(error){
+                    }
+                    
+
+                    if(validacion=="si" && con>=1 && cont>=1 && validacione=="si" && validaciona=="si" &&
+                    validacionar=="si" && validaciong=="si" && validacionn=="si" && validacionp=="si" && validaciont=="si"){
+                        document.getElementById("enviar").style.display="none";
+                        document.getElementById("load").style.display="";     
+                        validEstuExp()                                                                               
+                        submitformData()
+
+                    }else{
+                        document.getElementById("enviar").style.display="";
+                        document.getElementById("load").style.display="none";
+                    }
+                    
+                
+                }catch(error){
+                    document.getElementById("enviar").style.display="";
+                    document.getElementById("load").style.display="none";
+                }
+            }
+            function validEstuExp(){ 
+                try{
+                    empresa1=form.empresa1.value
+                }catch{
+                    empresa1=""
+                }
+                try{
+                    cargo1=form.cargo1.value
+                }catch{
+                    cargo1=""
+                }
+                try{
+                    funciones1=form.funciones1.value
+                }catch{
+                    funciones1=""
+                }
+                try{
+                    mesExp1=form.mesExp1.value
+                }catch{
+                    mesExp1=""
+                }
+                try{
+                    anioExp1=form.anioExp1.value
+                }catch{
+                    anioExp1=""
+                }
+                try{
+                    empresa2=form.empresa2.value
+                }catch{
+                    empresa2=""
+                }
+                try{
+                    cargo2=form.cargo2.value
+                }catch{
+                    cargo2=""
+                }
+                try{
+                    funciones2=form.funciones2.value
+                }catch{
+                    funciones2=""
+                }
+                try{
+                    mesExp2=form.mesExp2.value
+                }catch{
+                    mesExp2=""
+                }
+                try{
+                    anioExp2=form.anioExp2.value
+                }catch{
+                    anioExp2=""
+                }
+                try{
+                    empresa3=form.empresa3.value
+                }catch{
+                    empresa3=""
+                }
+                try{
+                    cargo3=form.cargo3.value
+                }catch{
+                    cargo3=""
+                }
+                try{
+                    funciones3=form.funciones3.value
+                }catch{
+                    funciones3=""
+                }
+                try{
+                    mesExp3=form.mesExp3.value
+                }catch{
+                    mesExp3=""
+                }
+                try{
+                    anioExp3=form.anioExp3.value
+                }catch{
+                    anioExp3=""
+                }
+                try{
+                    empresa4=form.empresa4.value
+                }catch{
+                    empresa4=""
+                }
+                try{
+                    cargo4=form.cargo4.value
+                }catch{
+                    cargo4=""
+                }
+                try{
+                    funciones4=form.funciones4.value
+                }catch{
+                    funciones4=""
+                }
+                try{
+                    mesExp4=form.mesExp4.value
+                }catch{
+                    mesExp4=""
+                }
+                try{
+                    anioExp4=form.anioExp4.value
+                }catch{
+                    anioExp4=""
+                }
+                try{
+                    empresa5=form.empresa5.value
+                }catch{
+                    empresa5=""
+                }
+                try{
+                    cargo5=form.cargo5.value
+                }catch{
+                    cargo5=""
+                }
+                try{
+                    funciones5=form.funciones5.value
+                }catch{
+                    funciones5=""
+                }
+                try{
+                    mesExp5=form.mesExp5.value
+                }catch{
+                    mesExp5=""
+                }
+                try{
+                    anioExp5=form.anioExp5.value
+                }catch{
+                    anioExp5=""
+                }
+                try{
+                    empresa6=form.empresa6.value
+                }catch{
+                    empresa6=""
+                }
+                try{
+                    cargo6=form.cargo6.value
+                }catch{
+                    cargo6=""
+                }
+                try{
+                    funciones6=form.funciones6.value
+                }catch{
+                    funciones6=""
+                }
+                try{
+                    mesExp6=form.mesExp6.value
+                }catch{
+                    mesExp6=""
+                }
+                try{
+                    anioExp6=form.anioExp6.value
+                }catch{
+                    anioExp6=""
+                }
+                try{
+                    empresa7=form.empresa7.value
+                }catch{
+                    empresa7=""
+                }
+                try{
+                    cargo7=form.cargo7.value
+                }catch{
+                    cargo7=""
+                }
+                try{
+                    funciones7=form.funciones7.value
+                }catch{
+                    funciones7=""
+                }
+                try{
+                    mesExp7=form.mesExp7.value
+                }catch{
+                    mesExp7=""
+                }
+                try{
+                    anioExp7=form.anioExp7.value
+                }catch{
+                    anioExp7=""
+                }
+                try{
+                    empresa8=form.empresa8.value
+                }catch{
+                    empresa8=""
+                }
+                try{
+                    cargo8=form.cargo8.value
+                }catch{
+                    cargo8=""
+                }
+                try{
+                    funciones8=form.funciones8.value
+                }catch{
+                    funciones8=""
+                }
+                try{
+                    mesExp8=form.mesExp8.value
+                }catch{
+                    mesExp8=""
+                }
+                try{
+                    anioExp8=form.anioExp8.value
+                }catch{
+                    anioExp8=""
+                }
+                try{
+                    empresa9=form.empresa9.value
+                }catch{
+                    empresa9=""
+                }
+                try{
+                    cargo9=form.cargo9.value
+                }catch{
+                    cargo9=""
+                }
+                try{
+                    funciones9=form.funciones9.value
+                }catch{
+                    funciones9=""
+                }
+                try{
+                    mesExp9=form.mesExp9.value
+                }catch{
+                    mesExp9=""
+                }
+                try{
+                    anioExp9=form.anioExp9.value
+                }catch{
+                    anioExp9=""
+                }
+                try{
+                    empresa10=form.empresa10.value
+                }catch{
+                    empresa10=""
+                }
+                try{
+                    cargo10=form.cargo10.value
+                }catch{
+                    cargo10=""
+                }
+                try{
+                    funciones10=form.funciones10.value
+                }catch{
+                    funciones10=""
+                }
+                try{
+                    mesExp10=form.mesExp10.value
+                }catch{
+                    mesExp10=""
+                }
+                try{
+                    anioExp10=form.anioExp10.value
+                }catch{
+                    anioExp10=""
+                }
+                try{
+                    formacion1 = document.getElementById("formacion1").value;
+                }catch{
+                    formacion1=""
+                }
+                try{
+                    areasEst1 = document.getElementById("areasEst1").value;
+                }catch{
+                    areasEst1=""
+                }
+                try{
+                    tarProfe1 = document.getElementById("tarProfe1").value;
+                }catch{
+                    tarProfe1=""
+                    }
+                try{
+                    institucion1 = document.getElementById("institucion1").value;
+                }catch{
+                    institucion1=""
+                }
+                try{
+                    mesEstu1 = document.getElementById("mesEstu1").value;
+                }catch{
+                    mesEstu1=""
+                }
+                try{
+                    anioEstu1 = document.getElementById("anioEstu1").value;
+                }catch{
+                    anioEstu1=""
+                }
+                try{
+                    formacion2 = document.getElementById("formacion2").value;
+                }catch{
+                    formacion2=""
+                }
+                try{
+                    areasEst2 = document.getElementById("areasEst2").value;
+                }catch{
+                    areasEst2=""
+                }
+                try{
+                    tarProfe2 = document.getElementById("tarProfe2").value;
+                }catch{
+                    tarProfe2=""
+                    }
+                try{
+                    institucion2 = document.getElementById("institucion2").value;
+                }catch{
+                    institucion2=""
+                }
+                try{
+                    mesEstu2 = document.getElementById("mesEstu2").value;
+                }catch{
+                    mesEstu2=""
+                }
+                try{
+                    anioEstu2 = document.getElementById("anioEstu2").value;
+                }catch{
+                    anioEstu2=""
+                }
+                try{
+                    formacion3 = document.getElementById("formacion3").value;
+                }catch{
+                    formacion3=""
+                }
+                try{
+                    areasEst3 = document.getElementById("areasEst3").value;
+                }catch{
+                    areasEst3=""
+                }
+                try{
+                    tarProfe3 = document.getElementById("tarProfe3").value;
+                }catch{
+                    tarProfe3=""
+                    }
+                try{
+                    institucion3 = document.getElementById("institucion3").value;
+                }catch{
+                    institucion3=""
+                }
+                try{
+                    mesEstu3 = document.getElementById("mesEstu3").value;
+                }catch{
+                    mesEstu3=""
+                }
+                try{
+                    anioEstu3 = document.getElementById("anioEstu3").value;
+                }catch{
+                    anioEstu3=""
+                }
+                try{
+                    formacion4 = document.getElementById("formacion4").value;
+                }catch{
+                    formacion4=""
+                }
+                try{
+                    areasEst4 = document.getElementById("areasEst4").value;
+                }catch{
+                    areasEst4=""
+                }
+                try{
+                    tarProfe4 = document.getElementById("tarProfe4").value;
+                }catch{
+                    tarProfe4=""
+                    }
+                try{
+                    institucion4 = document.getElementById("institucion4").value;
+                }catch{
+                    institucion4=""
+                }
+                try{
+                    mesEstu4 = document.getElementById("mesEstu4").value;
+                }catch{
+                    mesEstu4=""
+                }
+                try{
+                    anioEstu4 = document.getElementById("anioEstu4").value;
+                }catch{
+                    anioEstu4=""
+                }
+            }
+            function submitformData(){                 
+                var formData = new FormData();
+                fechaEstu1 = mesEstu1 + " "+ anioEstu1;
+                fechaEstu2 = mesEstu2 + " "+ anioEstu2;
+                fechaEstu3 = mesEstu3 + " "+ anioEstu3;
+                fechaEstu4 = mesEstu4 + " "+ anioEstu4;
+                fechaExp1 = mesExp1 + " "+ anioExp1;
+                fechaExp2 = mesExp2 + " "+ anioExp2;
+                fechaExp3 = mesExp3 + " "+ anioExp3;
+                fechaExp4 = mesExp4 + " "+ anioExp4;
+                fechaExp5 = mesExp5 + " "+ anioExp5;
+                fechaExp6 = mesExp6 + " "+ anioExp6;
+                fechaExp7 = mesExp7 + " "+ anioExp7;
+                fechaExp8 = mesExp8 + " "+ anioExp8;
+                fechaExp9 = mesExp9 + " "+ anioExp9;
+                fechaExp10 = mesExp10 + " "+ anioExp10;
+                formData.append("cargo",cargo);
+                formData.append("email",email);
+                formData.append("telefono",telefono);
+                formData.append("telefonoOp",telefonoOp);
+                formData.append("documento",documento);
+                formData.append("identificacion",identificacion);
+                formData.append("nombres",nombres);
+                formData.append("apellidos",apellidos);
+                formData.append("fechaNac",fechaNac);
+                formData.append("paisNacim",paisNacim);
+                formData.append("depNac",depNac)
+                formData.append("ciudadNac",ciudadNac);
+                formData.append("genero",gen);
+                formData.append("trabajoEnCrystal",trabajoEnCrystal);
+                formData.append("address",direccionCompleta);
+                formData.append("depResi",depResiden);
+                formData.append("ciudadResi",ciudadResi);
+                formData.append("formacion1",formacion1);
+                formData.append("areasEst1",areasEst1);
+                formData.append("tarProfe1",tarProfe1);
+                formData.append("institucion1",institucion1);
+                formData.append("fechaEstu1",fechaEstu1);
+                formData.append("formacion2",formacion2);
+                formData.append("areasEst2",areasEst2);
+                formData.append("tarProfe2",tarProfe2);
+                formData.append("institucion2",institucion2);
+                formData.append("fechaEstu2",fechaEstu2);
+                formData.append("formacion3",formacion3);
+                formData.append("areasEst3",areasEst3);
+                formData.append("tarProfe3",tarProfe3);
+                formData.append("institucion3",institucion3);
+                formData.append("fechaEstu3",fechaEstu3);
+                formData.append("formacion4",formacion4);
+                formData.append("areasEst4",areasEst4);
+                formData.append("tarProfe4",tarProfe4);
+                formData.append("institucion4",institucion4);
+                formData.append("fechaEstu4",fechaEstu4);
+                formData.append("idioma1",idioma1);
+                formData.append("nivel1",nivel1);
+                formData.append("idioma2",idioma2);
+                formData.append("nivel2",nivel2);
+                formData.append("idioma3",idioma3);
+                formData.append("nivel3",nivel3);
+                formData.append("empresa1",empresa1);
+                formData.append("cargo1",cargo1);
+                formData.append("funciones1",funciones1);
+                formData.append("fechaExp1",fechaExp1);
+                formData.append("empresa2",empresa2);
+                formData.append("cargo2",cargo2);
+                formData.append("funciones2",funciones2);
+                formData.append("fechaExp2",fechaExp2);
+                formData.append("empresa3",empresa3);
+                formData.append("cargo3",cargo3);
+                formData.append("funciones3",funciones3);
+                formData.append("fechaExp3",fechaExp3);
+                formData.append("empresa4",empresa4);
+                formData.append("cargo4",cargo4);
+                formData.append("funciones4",funciones4);
+                formData.append("fechaExp4",fechaExp4);
+                formData.append("empresa5",empresa5);
+                formData.append("cargo5",cargo5);
+                formData.append("funciones5",funciones5);
+                formData.append("fechaExp5",fechaExp5);
+                formData.append("empresa6",empresa6);
+                formData.append("cargo6",cargo6);
+                formData.append("funciones6",funciones6);
+                formData.append("fechaExp6",fechaExp6);
+                formData.append("empresa7",empresa7);
+                formData.append("cargo7",cargo7);
+                formData.append("funciones7",funciones7);
+                formData.append("fechaExp7",fechaExp7);
+                formData.append("empresa8",empresa8);
+                formData.append("cargo8",cargo8);
+                formData.append("funciones8",funciones8);
+                formData.append("fechaExp8",fechaExp8);
+                formData.append("empresa9",empresa9);
+                formData.append("cargo9",cargo9);
+                formData.append("funciones9",funciones9);
+                formData.append("fechaExp9",fechaExp9);
+                formData.append("empresa10",empresa10);
+                formData.append("cargo10",cargo10);
+                formData.append("funciones10",funciones10);
+                formData.append("fechaExp10",fechaExp10);
+                formData.append("areasInte",areasInte);
+                formData.append("areaInteOtr",areaInteOtr);
+                formData.append("aspSal",aspSal);
+                formData.append("ultiSal",UltiSal);
+                formData.append("archivoHV",$('input[type=file]')[0].files[0]);
+                    var url='/enviarForm/'
+                    fetch(url,{
+                        method:'POST',
+                        headers:{
+                            'X-CSRFToken': csrftoken,
+                        },
+                        body:formData
+                    })
+                    .then((response) => {
+                        if (response.status === 500) {
+                            alert("Error!! no se pudo guardar la información.")
+                            response.blob().then(blob => {
+                                window.open(URL.createObjectURL(blob));
+                            });
+                        }else{
+                            window.location.href="{% url 'gracias' %}"
+                        }
+                    })
+            }
+        </script>
+    </body>
+</html>

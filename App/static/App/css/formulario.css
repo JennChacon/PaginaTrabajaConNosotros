@@ -1,0 +1,148 @@
+.titulo-formulario{
+    background-size: cover;
+    color: black;
+    font-weight: 600; 
+    font-size: large;
+    margin-top: 11%;
+    margin-block-end: 3%;
+    font-family: Neue helvetica® pro 45, sans-serif;
+}
+.subtitulo-formulario{
+    background-size: cover;
+    color: rgb(75, 75, 75);
+    font-weight: 500; 
+    font-size: medium;
+    margin-top: 6%;
+}
+.container-fluid.contenedor-formulario{
+    font-family: Neue helvetica® pro 45, sans-serif;
+    background-color: white;    
+    border: 1px solid gainsboro;
+}
+body{
+    background-color: #F5F5F5;
+}
+.select-wrapper input.select-dropdown {
+    color: #9e9e9e;
+    font-family: auto;
+}
+span{
+    font-size: small;
+}
+.span-gray{
+    font-weight: 400;
+    color: gray;
+}
+a:hover{
+    text-decoration: underline #039be5;
+}
+.row .col.l7.s6.no-soy-robot{
+    margin-top: 10%;
+}
+
+.row .col.l5.s6.captcha{
+    text-align: right;
+    margin-top: 5%;
+}
+.adjuntar.btn:hover{
+    background-color: rgb(92, 92, 92);
+}
+h6{
+    font-size: 0.5rem;
+}
+.input-field>label {
+    left: 10px;
+}
+
+.browser-default{
+    color: #9e9e9e;
+    font-weight: 480;
+    border: 1px solid #9e9e9e;
+}
+
+.span-robot{
+    margin-left: -1%;
+}
+
+.terminos-condiciones{
+    color: black;
+    font-size: 8.2px;
+    cursor: pointer;
+}
+
+.terminos-condiciones:hover{
+    text-decoration: underline black;
+}
+
+.waves-effect.waves-light.formulario.btn-large{
+    position: initial;
+    background-color:black;
+    color: white;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+input.invalid[type=text]:not(.browser-default){
+    border-bottom: 1px solid #9e9e9e;
+}
+.waves-effect.waves-light.formulario.btn-large:hover{
+    background-color:rgb(65, 65, 65);
+    position: relative;
+}
+
+.waves-effect.waves-light.idioma.btn{
+    background-color: #464646;
+    width: 100%;
+    cursor: pointer;
+}
+
+.waves-effect.waves-light.idioma.btn:hover{
+    background-color: rgb(92, 92, 92);
+}
+
+.waves-effect input[type="button"]{
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+}
+
+.row.enviar{
+    cursor: pointer;
+    text-align: center;
+}
+.datepicker{
+    cursor: pointer;
+    background-color: midnightblue;
+}
+.datepicker-date-display {
+    background-color: midnightblue;
+}
+
+.input-field{
+    cursor: pointer;
+    font-family: Neue helvetica® pro 45, sans-serif; 
+    font-weight: 300;
+}
+
+img{
+    width: 40%;
+}
+.waves-effect.waves-light.genero.btn-large{
+    background-color: white;
+    color: gray;
+}
+
+.modal.modal-fixed-footer{
+    width: 96%;
+    min-height: 80%;
+}
+
+fieldset{
+    border: solid 1px #9e9e9e;
+    display:block;
+    clear:both;
+}
+
+label{
+    font-weight: 480;
+}

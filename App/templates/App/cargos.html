@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P46S4Q8');</script>
+        <!-- End Google Tag Manager -->
+        <TITLE>Cargos - Crystal S.A.S</TITLE>   
+        <link rel="shortcut icon" href="{% static 'App/images/crystal-sas.png' %}">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P46S4Q8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col s12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="imagen-encabezado-cargo" >
+                                    <br><br>
+                                    <div class="titulo-imagen-cargos">{{cargos.nombre}}</div>
+                                    <br><br>
+                                </div>      
+                            </div>
+                        </div>
+                    </div>              
+                </div>  
+                <div class="col s12">
+                    <div class="container-fluid">
+                    <div class="row">
+                        <div class="col s12">   
+                        <a style="color: #4c4c4c;margin-left: 2%;font-size: large;" href="{% url 'home' %}" onMouseover="this.style.color='#c1bbbb'" onMouseout="this.style.color='#4c4c4c'">Inicio > </a>  
+                        <a style="color: #4c4c4c;font-size: large;" href="{% url 'vacantes' filtro=1 %}" onMouseover="this.style.color='#c1bbbb'" onMouseout="this.style.color='#4c4c4c'">Vacantes > </a>
+                        <a style="color: #4c4c4c;font-size: large;" href="{% url 'cargos' idCargos=cargos.id %}" onMouseover="this.style.color='#c1bbbb'" onMouseout="this.style.color='#4c4c4c'">Cargos</a>                  
+                        </div>
+                    </div>
+                    </div>
+                </div> 
+                <div class="col s12">
+                    <div class="container-fluid contenedor-cargo">
+                        <div class="row">
+                            <div class="col l4 m12 s12 fijo-incribete">
+                                <div class="container-fluid inscribete-estilos">
+                                    <div class="row">
+                                        <br><br>
+                                        <div class="col s12">
+                                            <a href="{% url 'formulario' idCargos=cargos.id %}" class="waves-effect waves-light btn-large">postúlate aquí</a> 
+                                            <br><br>
+                                            <hr>
+                                        </div> 
+                                        <div class="col s12 info-titulo-inscribete">
+                                            <div class="container-fluid">
+                                                <div class="row" style="margin-block-end: 0;">
+                                                    {% if cargos.ubicacion != "" %}
+                                                        {% if cargos.ubicacion != "N/A" %}
+                                                            {% if cargos.ubicacion != "No aplica" %}
+                                                                <div class="col  s6 m5 l5 center">
+                                                                    <p><i class="fa fa-map-marker iconos"></i><b>Ubicación: </b></p>
+                                                                </div>
+                                                                <div class="col s6 m7 l7" style="padding: 0%;">
+                                                                    {% for ubicacion in splitUbicacion %}
+                                                                        {% if ubicacion != "" %}
+                                                                            <p>{{ubicacion}}</p>
+                                                                        {% endif %}
+                                                                    {% endfor %}
+                                                                </div>
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                                <div class="row"  style="margin-block-end: 0;">
+                                                    {% if cargos.contrato != "" %}
+                                                        {% if cargos.contrato != "N/A" %}
+                                                            {% if cargos.contrato != "No aplica" %}
+                                                                <div class="col  s6 m5 l5 center">
+                                                                    <p><i class="fa fa-file iconos"></i><b>Contrato: </b></p>
+                                                                </div>  
+                                                                <div class="col s6 m7 l7" style="padding: 0%;">
+                                                                    {% for contrato in splitContrato %}
+                                                                        {% if contrato != "" %}
+                                                                            <p>{{contrato}}</p>
+                                                                        {% endif %}
+                                                                    {% endfor %}
+                                                                </div>
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                                <div class="row" style="margin-block-end: 0;">
+                                                    {% if cargos.jornada != "" %}
+                                                        {% if cargos.jornada != "N/A" %}
+                                                            {% if cargos.jornada != "No aplica" %}
+                                                                <div class="col  s6 m5 l5 center">
+                                                                    <p><i class="fa fa-calendar iconos"></i> <b>Jornada: </b></p>
+                                                                </div>
+                                                                <div class="col s6 m7 l7" style="padding: 0%;">
+                                                                    {% for jornada in splitJornada %}
+                                                                        {% if jornada != "" %}
+                                                                            <p>{{jornada}}</p>
+                                                                        {% endif %}
+                                                                    {% endfor %}
+                                                                </div>
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                                <div class="row" style="margin-block-end: 0;">
+                                                    {% if cargos.vacantes is not 0 %}
+                                                        <div class="col s6 m5 l5 center">
+                                                            <p><i class="fa fa-users iconos"></i><b>Vacantes: </b></p>
+                                                        </div>
+                                                        <div class="col s6 m7 l7" style="padding: 0%;">
+                                                            <p>{{cargos.vacantes}}</p>
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l8 s12">
+                                <div class="container-fluid descripcion-oferta">
+                                    <div class="row">
+                                        {% if cargos.objetivo != "" %}
+                                            {% if cargos.objetivo != "N/A" %}
+                                                {% if cargos.objetivo != "No aplica" %}
+                                                    <div class="col s12">
+                                                        <p><b>Objetivo del cargo</b></p>
+                                                        {% for objetivo in splitObjetivo %}
+                                                            {% if objetivo != "" %}
+                                                                <p>{{ objetivo }}<br></p>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if cargos.responsabilidades != "" %}
+                                            {% if cargos.responsabilidades != "N/A" %}
+                                                {% if cargos.responsabilidades != "No aplica" %}
+                                                    <div class="col s12">
+                                                        <p><b>Principales responsabilidades</b></p>
+                                                        {% for respons in splitResponsabilidades %}
+                                                            {% if respons != "" %}
+                                                                <p>{{ respons }}<br></p>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if cargos.formacion != "" %}
+                                            {% if cargos.formacion != "N/A" %}
+                                                {% if cargos.formacion != "No aplica" %}
+                                                    <div class="col s12">
+                                                        <p><b>Formación académica</b></p>
+                                                        {% for forma in splitFormacion %}
+                                                            {% if forma != "" %}
+                                                                <p>{{ forma }}<br></p>
+                                                            {% endif %}
+                                                        {% endfor %}                     
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if cargos.sistemas_programas_herramientas != "" %}
+                                            {% if cargos.sistemas_programas_herramientas != "N/A" %}
+                                                {% if cargos.sistemas_programas_herramientas != "No aplica" %}
+                                                    <div class="col s12">
+                                                        <p><b>Sistemas y/o programas y/o herramientas</b></p>
+                                                        {% for sistemas in splitSistemasPH %}
+                                                            {% if sistemas != "" %}
+                                                                <p>{{ sistemas }}<br></p>
+                                                            {% endif %}
+                                                        {% endfor %}                                            
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if cargos.experiencia != "" %}
+                                            {% if cargos.experiencia != "N/A" %}
+                                                {% if cargos.experiencia != "No aplica" %}
+                                                    <div class="col s12">
+                                                        <p><b>Experiencia</b></p>
+                                                        {% for experiencia in splitExperiencia %}
+                                                            {% if experiencia != "" %}
+                                                                <p>{{ experiencia }}<br></p>
+                                                            {% endif %}
+                                                        {% endfor %}                                             
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if cargos.idiomas != "" %}
+                                            {% if cargos.idiomas != "N/A" %}
+                                                {% if cargos.idiomas != "No aplica" %}
+                                                    <div class="col s12">
+                                                        <p><b>Idiomas</b></p>
+                                                        {% for idioma in splitIdiomas %}
+                                                            {% if idioma != "" %}
+                                                                <p>{{ idioma }}<br></p>
+                                                            {% endif %}
+                                                        {% endfor %}                                            
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if cargos.conocimientos != "" %}
+                                            {% if cargos.conocimientos != "N/A" %}
+                                                {% if cargos.conocimientos != "No aplica" %}
+                                                    <div class="col s12">
+                                                        <p><b>Conocimientos específicos</b></p>
+                                                        {% for conocimiento in splitConocimientos %}
+                                                            {% if conocimiento != "" %}
+                                                                <p>{{ conocimiento }}<br></p>
+                                                            {% endif %}
+                                                        {% endfor %}                                             
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'App/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'App/css/cargos.css' %}">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,3670 @@
+p {
+    color: black;
+    font-weight: 300;
+    font-size: large;
+    text-align: justify;
+}
+
+h4{
+    font-weight: 500;
+    letter-spacing: 1px; 
+}
+
+h5{
+    letter-spacing: 1px; 
+    font-size: 1rem;
+}
+.container-fluid.contenedor{
+    max-width: 100%;
+    min-width: 50%;
+    overflow: hidden;
+}
+.waves-effect.waves-light.btn-large{
+    background-color: white;
+    font-weight: 400;
+    color: black;
+}
+.waves-effect.waves-light.btn-large:hover{
+    background-color: rgb(105, 105, 105);
+    color: white;
+}
+
+.pagina-footer{
+    background-color: #f1f1f1;
+}
+
+.contactanos{
+    font-size: small;
+    font-weight: 600;
+}
+
+.contactanos-correos{
+    font-size: small;
+    font-weight: 300;
+}
+
+.iconos{
+    font-size: large;
+    color:gray;
+    padding: 2%;
+}
+
+.icono-archivo{
+    font-size: large;
+    color:white;
+    padding: 2%;
+}
+
+.imagen-encabezado{
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;    
+    background: black;
+}
+
+.texto-imagen-encabezado{
+    text-align: center;
+    font-weight: 400; 
+    top: 40%; 
+    left: 20%; 
+    font-size: 6vw; 
+    color: white;
+    position: absolute;
+}
+
+.encabezado{
+    height: 33vw; 
+    padding: 0%;
+    position: relative; 
+    display: inline-block; 
+    text-align: center; 
+}
+
+.tamaño-imagen{
+    width: 100%;
+}
+body{
+    font-weight: 300; 
+    letter-spacing: 1px;
+}
+.redes{
+    color: black;
+}
+.slider .slides li .caption-unete {
+    color: #fff;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 91%;
+}
+@media only screen and (max-width: 340px) and (min-width: 5px)  {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 8vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 10%;
+        font-size: 10vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 15vw;
+    }
+    
+        .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 24px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+} 
+@media only screen and (max-width: 370px) and (min-width: 341px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 70%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 8vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 8vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 15vw;
+    }
+    
+        .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+} 
+@media only screen and (max-width: 400px) and (min-width: 371px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 7.5vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7.7vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 14vw;
+    }
+    
+        .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+@media only screen and (max-width: 420px) and (min-width: 401px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 6.6vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7.5vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 13vw;
+    }
+    
+        .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+@media only screen and (max-width: 450px) and (min-width: 421px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 6.3vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7.5vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 13vw;
+    }
+    .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+@media only screen and (max-width: 460px) and (min-width: 451px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 6vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 13vw;
+    }
+    .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+@media only screen and (max-width: 480px) and (min-width: 461px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 6vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 12vw;
+    }
+    .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+@media only screen and (max-width: 490px) and (min-width: 481px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 6vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 11vw;
+    }
+    .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+@media only screen and (max-width: 520px) and (min-width: 491px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 6vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4.4vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 11vw;
+    }
+    .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+@media only screen and (max-width: 540px) and (min-width: 521px) {    
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 6vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 11vw;
+    }
+    .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+
+@media only screen and (max-width: 560px) and (min-width: 541px) {  
+
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 6vw;
+        margin-top: 12%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 4vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 10vw;
+    }
+    .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+
+@media only screen and (max-width: 570px) and (min-width: 561px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .titulo-imagen-vacantes{
+        font-size: 6vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -18%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3.3vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 10vw;
+    
+    }
+
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 34px;
+        margin: 3%;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 590px) and (min-width: 571px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .titulo-imagen-vacantes{
+        font-size: 6vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -18%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3.3vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 10vw;
+    
+    }
+
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 25px;
+        margin: 3%;
+        margin-left: 9%;
+        margin-right: 9%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 610px) and (min-width: 591px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5.5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -18%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3.4vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 10vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 33px;
+        margin: 3%;
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 630px) and (min-width: 611px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5.5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -18%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3.3vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 9vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0px 30px;
+        margin: 3%;
+        margin-left: 9%;
+        margin-right: 9%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 640px) and (min-width: 631px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5.2vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -18%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3.3vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 9vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 28px;
+        margin: 3%;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 660px) and (min-width: 641px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5.2vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -18%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3.3vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 8vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 34px;
+        margin: 3%;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 700px) and (min-width: 661px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -20%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3.2vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 8vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 44px;
+        margin: 3%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 720px) and (min-width: 701px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -20%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 8vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 37px;
+        margin: 3%;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 740px) and (min-width: 721px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -18%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3.2vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 8vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 40px;
+        margin: 3%;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 800px) and (min-width: 741px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -18%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 3vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 7vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 40px;
+        margin: 3%;
+        margin-left: 7%;
+        margin-right: 7%;
+    
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 890px) and (min-width: 801px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -17%;
+        font-size: 5.5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 2.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 7vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0px 34px;
+        margin: 3%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 960px) and (min-width: 891px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 4.5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -16%;
+        font-size: 5.2vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 2.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 7vw;
+    
+    }
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 30px;
+        margin: 3%;
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 1000px) and (min-width: 961px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 4vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -15%;
+        font-size: 5.2vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 2.4vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 6vw;
+    
+    }
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: sticky;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 31px;
+        margin: 3%;
+        margin-left: 14%;
+        margin-right: 14%;
+    
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 1110px) and (min-width: 1001px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 4vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -14%;
+        font-size: 5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 2.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 6vw;
+    
+    }
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: sticky;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 38px;
+        margin: 3%;
+        margin-left: 16%;
+        margin-right: 16%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 1200px) and (min-width: 1111px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 4vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -13%;
+        font-size: 5vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 2.5vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 6vw;
+    
+    }
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: sticky;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 84px;
+        margin: 3%;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 1300px) and (min-width: 1201px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 3.8vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: -12%;
+        font-size: 4vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 2.2vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 5vw;
+    
+    }
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: sticky;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 80px;
+        margin: 3%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 1350px) and (min-width: 1301px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 3.5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: 1%;
+        font-size: 4vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 2vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 5vw;
+    
+    }
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: sticky;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 85px;
+        margin: 3%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 1410px) and (min-width: 1351px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 3.5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: 2%;
+        font-size: 4vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 1.6vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 5vw;
+    
+    }
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: sticky;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 90px;
+        margin: 3%;
+        margin-left: 22%;
+        margin-right: 22%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+@media only screen and (max-width: 4610px) and (min-width: 1411px) {  
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 44%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 3.5vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        margin-top: 4%;
+        font-size: 4vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 1.6vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 4vw;
+    }
+      
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: sticky;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 100px;
+        margin: 3%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+/*
+@media screen and (min-width: 600px){
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 84%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .titulo-imagen-vacantes{
+        font-size: 4vw;
+        margin-top: 10%;
+    
+    }    
+    
+    .texto-imagen-vacantes{
+        margin-top: 20%;
+        font-size: 7vw;
+    }  
+    .texto-somos-honestos{
+        font-size: 2.7vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 5vw;
+    }
+    
+        .titulo-imagen-cargos{
+        font-size:7vw;
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: relative;
+        top: 5%;
+        float: right;
+    }
+    .titulo-imagen-formulario{
+        font-size: 6vw;
+    }
+    .col.s12.fijo-boton{
+        position: fixed;
+        overflow: hidden;
+        z-index: 5;
+    }
+    .container-fluid.contenedor-formulario{
+        padding: 0 50px;
+        margin: 3%;
+    }
+    .container.captcha{
+        border: 1px solid #d3d3d3;;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+        width: 222px;;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 45%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+    .caption-unete{
+        margin-top: -6%;
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -48%;
+    }
+}
+
+
+@media screen and (min-width: 1000px){
+    .waves-effect input[type="submit"]{
+        font-weight: 500;
+        cursor: pointer;
+        color: white;
+    }
+    #contenedor_carga{
+        background-color: rgb(255 255 255 / 90%);
+        height: 92%;
+        width: 37%;
+        position: fixed;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        z-index: 10000;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #carga{
+        border: 15px solid rgb(208 216 204);
+        border-top-color: rgb(136 214 134);
+        border-top-style: groove;
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-animation: girar 1.5s linear infinite;
+        -o-animation: girar 1.5s linear infinite;
+        animation: girar 1.5s linear infinite;
+    }
+
+    @keyframes girar{
+        from {transform: rotate(0deg);}
+        to { transform: rotate(360deg);}
+    }
+    .container-fluid.contenido-a-quien-buscamos{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .container-fluid.foto-quien-buscamos{
+        margin-right: 15%;
+    }
+    
+    .titulo-imagen-vacantes{
+        font-size: 4vw;
+    
+    }
+    
+    .texto-imagen-vacantes{
+        argin-top: 20%;
+        font-size: 7vw;
+    }
+     
+    .texto-somos-honestos{
+        font-size: 2vw;
+    
+    }
+    .titulo-imagen-ofertas{
+        font-size: 4vw;
+    
+    }
+    
+    
+    
+    .titulo-imagen-cargos{
+        font-size: 3vw;
+    
+    }
+    
+    .titulo-imagen-formulario{
+        font-size: 4vw;
+    
+    }
+    .col.l4.m12.s12.fijo-incribete{
+        position: sticky;
+        top: 5%;
+        float: right;
+    }
+    .container-fluid.contenedor-formulario{        
+        padding: 0 100px;
+        margin: 3%;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .container.captcha{
+        border: 1px solid;
+        width: 60%;
+        background-color: #F1F1F1;
+        height: 100px;
+        border-color: gray;
+    }
+    .adjuntar.btn{
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        width: 30%;
+        cursor: pointer;
+        background-color: #464646;
+        color: white;
+    }
+
+    .caption-unete{
+        text-align: center; 
+    }
+    .caption-imagenes{
+        text-align: center;
+        margin-top: -12%;
+    }
+}
+*/
+@media screen and (max-width: 800px) {
+    table {
+        width:100%;
+    }
+    thead {
+        display: none;
+    }
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+    tr td:first-child {
+        background: #f4f4f4;
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+    tbody td {
+        display: block;
+        text-align:center;
+    }
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align:center;
+    }
+}

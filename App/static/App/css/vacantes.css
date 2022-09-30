@@ -1,0 +1,64 @@
+.container-fluid.contenido-vacantes{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.col.s12.scroll{
+    width: 1000px;
+    max-height: 500px;
+    margin-block-end: 2%;
+    overflow-x:scroll
+}
+
+hr.titulo{
+    border: 1px solid;
+    color: gray;
+}
+
+tr:hover{
+    background-color: rgb(223, 223, 223);
+}
+
+th{
+    font-size: large;
+}
+
+a{
+ color: black;
+}
+
+.cambio-color{    
+    color: black;
+}
+.cambio-color:hover{
+    cursor: pointer;
+    opacity: initial;
+    text-decoration: underline blue;
+    color: blue;
+}
+
+table{
+    text-align: center;
+}
+
+.texto-quiero-ser-parte{
+    font-size: large;
+}
+
+.titulo-quiero-ser-parte{
+    font-size: xx-large;
+    color: black;
+    font-weight: 400; 
+    margin: 2%;
+    font-family: Neue helvetica® pro 45, sans-serif;
+}
+
+.titulo-imagen-ofertas{
+    color: black;
+    font-family: Neue helvetica® pro 45, sans-serif;
+    font-weight: 400; 
+    font-size: large;
+}
+
+th{
+    background: #f4f4f4;
+}

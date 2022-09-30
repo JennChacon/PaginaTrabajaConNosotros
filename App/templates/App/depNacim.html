@@ -1,0 +1,10 @@
+<option value="" disabled selected>Selecciona departamento de nacimiento *</option>
+{% for j in resultPais %}
+    {% if j.name == pais %}
+        {% for i in resultDepart %}
+            {% if j.id == i.id_country %} 
+                <option value="{{i.name}}">{{i.name}}</option>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}

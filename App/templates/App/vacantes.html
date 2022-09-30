@@ -1,0 +1,211 @@
+{% load static %}
+<style>
+.fondo-quiero-ser-parte{
+    background-image: url("{% static 'App/images/Sumate-a-nuestro-equipo2.jpg' %}");
+    width: 100%;
+    height: 70%;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+.imagen-encabezado-ofertas{
+    background-image: url("{% static 'App/images/vacantes2.jpg' %}");
+    width: 100%;
+    height: 60%;
+    background-color: black;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<!DOCTYPE HTML>
+<HTML>
+    <HEAD>
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-P46S4Q8');</script>
+      <!-- End Google Tag Manager -->
+        <TITLE>Vacantes - Crystal S.A.S</TITLE>   
+        <link rel="shortcut icon" href="{% static 'App/images/crystal-sas.png' %}">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    </HEAD>
+    <BODY>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P46S4Q8"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <div class="container-fluid">
+          <div class="row">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="imagen-encabezado-ofertas" >
+                        </div>      
+                    </div>
+                </div>
+            </div>      
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col s12">   
+                  <a style="color: #4c4c4c;margin-left: 2%;font-size: large;" href="{% url 'home' %}" onMouseover="this.style.color='#c1bbbb'" onMouseout="this.style.color='#4c4c4c'">Inicio > </a>  
+                  <a style="color: #4c4c4c;font-size: large;" href="{% url 'vacantes' filtro=1 %}" onMouseover="this.style.color='#c1bbbb'" onMouseout="this.style.color='#4c4c4c'">Vacantes</a>         
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col s12" style="text-align: justify;">
+                  <h3 style="text-align: center;margin: 0%;">¡Vacantes!</h3>
+                  <h4>Gracias por estar aquí...</h4>
+                  <p>Para nosotros es muy grato saber que deseas ser parte de nuestro equipo y queremos que sepas que:
+                    <br><br>
+                    - Revisamos todas las hojas de vida que recibimos para cada vacante, seleccionamos con rigurosidad las que continúan en el proceso de acuerdo con los requerimientos exigidos y las demás hojas de vida quedan disponibles en nuestra base de datos para que puedas tener, futuras posibilidades laborales con nosotros.
+                    <br><br>
+                    - Las vacantes que encontrarás a continuación son las disponibles actualmente, una vez se cierra la búsqueda de un candidato, la vacante se baja de la plataforma
+                    <br><br>
+                    ¡Muchos éxitos en tu participación! 
+                  </p>
+                </div>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col s12 center">
+                      <div class="titulo-quiero-ser-parte center">¡Súmate a nuestro equipo!</div>
+                        <p class="texto-quiero-ser-parte center">Si quieres participar en nuestras convocatorias o 
+                            compartirnos tu hoja de vida para vacantes futuras</p> 
+                        {% with idCargos=1 %}           
+                        <a href="{% url 'formulario' idCargos=idCargos %}" class="waves-effect waves-light btn-large center">inscríbete aquí</a>
+                        {% endwith %} 
+                      </div>   
+                    </div>                
+                  </div>     
+                </div> 
+                <div class="input-field col l4 s12">
+                  <select id="ordenar" onchange="ShowSelected();" >
+                      <option value="" disabled selected>Ordenar por</option>
+                      <option value="1">Cargo A-Z</option>
+                      <option value="2">Cargo Z-A</option>
+                  </select>
+                  <br>
+                </div>     
+              </div>
+            </div>
+              <div class="container-fluid contenido-vacantes">
+                  <div class="row" style="margin-block-end: 0%;">                     
+                      <div class="col s12 scroll">
+                        <div class="container-fluid center">
+                          <div class="row" style="border: 1px solid;">
+                              <table class="centered">
+                                  <thead>
+                                    <tr>
+                                      <th>Cargo</th>
+                                      <th>Área</th>
+                                      <th>Ubicación</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {% for carg in cargos %}
+                                      {% if carg.habilitado == True and fechaActual <= carg.vencimiento_vacante and fechaActual >= carg.inicio_vacante %}
+                                        <tr>
+                                          <td><a href="{% url 'cargos' idCargos=carg.id %}" class="cambio-color">{{carg.nombre}}</a></td>
+                                          <td>{{carg.area}}</td>                                            
+                                          <td>{{carg.ubicacion}}</td>
+                                        </tr>     
+                                      {% endif %}   
+                                    {% endfor %}  
+                                  </tbody>
+                              </table> 
+                            <br>                
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div> 
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col s12">
+                    <div class="fondo-quiero-ser-parte" ></div>      
+                  </div>
+                </div>
+            </div>                          
+          </div>
+      </div>
+      <footer class="pagina-footer">
+        <div class="container" >
+          <div class="row">
+            <div class="col l7 m6 s12">
+              <br>
+              <div class="contactanos">Contáctanos</div>
+              <br>
+              <div class="contactanos-correos">
+                Si tienes alguna duda puedes comunicarte con nosotros:
+                <br>
+                <br>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col l12 s12">
+                      - Para procesos administrativos:
+                      <br>
+                      <i class="fa fa-envelope iconos"></i> seleccioncrystal@crystal.com.co
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col l12 s12">
+                      - Para realizar la práctica con nosotros:
+                      <br>
+                      <i class="fa fa-envelope iconos"></i> selpracticantes@crystal.com.co
+                      <br>
+                      <i class="fa fa-whatsapp iconos"></i> +54 3104153092  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col l5 m6 s12">
+              <div class="container-fluid"> 
+                <div class="contactanos-correos">
+                  También puedes seguirnos en nuestras redes sociales para estar enterado de nuestras últimas vacantes.              
+                  <br><br>
+                  <i class="fa fa-instagram iconos"></i> <a class="redes" href="https://www.instagram.com/seleccioncrystal/" target="_blank">@seleccioncrystal  </a>               
+                  <br>        
+                  <i class="fa fa-facebook iconos"></i> <a class="redes" href="https://www.facebook.com/Selecci%C3%B3n-Crystal-1054647044618912" target="_blank">@selección Crystal</a>
+                  <br>
+                  <br>
+                </div>            
+              </div>            
+            </div>
+          </div>
+        </div>
+      </footer>       
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="{% static 'App/css/vacantes.css' %}">
+      <link rel="stylesheet" href="{% static 'App/css/main.css' %}">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script type="text/javascript" src="{% static 'App/js/vacantes.js' %}"></script>
+      <script type="text/javascript">
+        function ShowSelected() {
+          var valor=document.getElementById("ordenar").value;
+          if(valor==='1'){
+              window.location.href="{% url 'vacantes' filtro=1 %}"
+          }else{
+              if(valor==='2'){
+                  window.location.href="{% url 'vacantes' filtro=2 %}"
+              }
+          }
+        }
+      </script>
+        
+      
+    </BODY>
+</HTML>
